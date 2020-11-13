@@ -16,6 +16,7 @@
 		DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979E2255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift */; };
 		DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */; };
 		DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */; };
+		DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979ED255F3189002E2BD3 /* ColorCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DCD979E2255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
 		DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutItem+Extension.swift"; sourceTree = "<group>"; };
+		DCD979ED255F3189002E2BD3 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		DCD979C9255F2252002E2BD3 /* CompositionalDiffablePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DCD979EC255F3177002E2BD3 /* Views */,
 				DCD979E1255F276D002E2BD3 /* Extensions */,
 				DCD979CA255F2252002E2BD3 /* AppDelegate.swift */,
 				DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */,
@@ -82,6 +85,14 @@
 				DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DCD979EC255F3177002E2BD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCD979ED255F3189002E2BD3 /* ColorCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			files = (
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
+				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
