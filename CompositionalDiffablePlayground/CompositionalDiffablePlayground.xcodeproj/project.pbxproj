@@ -17,6 +17,9 @@
 		DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */; };
 		DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */; };
 		DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979ED255F3189002E2BD3 /* ColorCell.swift */; };
+		DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F1256051C0002E2BD3 /* ListViewController.swift */; };
+		DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */; };
+		DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutItem+Extension.swift"; sourceTree = "<group>"; };
 		DCD979ED255F3189002E2BD3 /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		DCD979F1256051C0002E2BD3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutSection+Extension.swift"; sourceTree = "<group>"; };
+		DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDiffableDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,8 @@
 		DCD979C9255F2252002E2BD3 /* CompositionalDiffablePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DCD979F7256076F4002E2BD3 /* DataSources */,
+				DCD979F0256051B2002E2BD3 /* ViewControllers */,
 				DCD979EC255F3177002E2BD3 /* Views */,
 				DCD979E1255F276D002E2BD3 /* Extensions */,
 				DCD979CA255F2252002E2BD3 /* AppDelegate.swift */,
@@ -83,6 +91,7 @@
 				DCD979E2255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift */,
 				DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */,
 				DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */,
+				DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -93,6 +102,22 @@
 				DCD979ED255F3189002E2BD3 /* ColorCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DCD979F0256051B2002E2BD3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCD979F1256051C0002E2BD3 /* ListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DCD979F7256076F4002E2BD3 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +194,11 @@
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
+				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
+				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,
+				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

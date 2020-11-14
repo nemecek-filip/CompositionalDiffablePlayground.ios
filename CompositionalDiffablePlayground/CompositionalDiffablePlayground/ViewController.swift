@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate typealias Snapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
+typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
 
 class ViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     private func setupView() {
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
+        collectionView.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(regenerateTapped))
     }
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     private func generateData(animated: Bool) {
-        var snapshot = Snapshot()
+        var snapshot = ColorsSnapshot()
         
         var sections = [Int]()
         
@@ -146,6 +147,15 @@ class ViewController: UIViewController {
         layout.configuration = config
         
         return layout
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.section == 0 else { return }
+        
+        let listVC = ListViewController()
+        navigationController?.pushViewController(listVC, animated: true)
     }
 }
 

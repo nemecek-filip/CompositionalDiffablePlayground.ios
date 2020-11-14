@@ -11,6 +11,10 @@ class ColorCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         contentView.layer.cornerRadius = 10
     }
