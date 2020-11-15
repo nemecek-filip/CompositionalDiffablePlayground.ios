@@ -20,6 +20,11 @@
 		DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F1256051C0002E2BD3 /* ListViewController.swift */; };
 		DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */; };
 		DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */; };
+		DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979FB256120DF002E2BD3 /* LayoutTypeCell.swift */; };
+		DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */; };
+		DCD97A012561215D002E2BD3 /* UICollectionCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */; };
+		DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0525612204002E2BD3 /* LayoutType.swift */; };
+		DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		DCD979F1256051C0002E2BD3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutSection+Extension.swift"; sourceTree = "<group>"; };
 		DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDiffableDatasource.swift; sourceTree = "<group>"; };
+		DCD979FB256120DF002E2BD3 /* LayoutTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTypeCell.swift; sourceTree = "<group>"; };
+		DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutTypeCell.xib; sourceTree = "<group>"; };
+		DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionCell+Extension.swift"; sourceTree = "<group>"; };
+		DCD97A0525612204002E2BD3 /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
+		DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +80,13 @@
 		DCD979C9255F2252002E2BD3 /* CompositionalDiffablePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DCD97A04256121FA002E2BD3 /* Model */,
 				DCD979F7256076F4002E2BD3 /* DataSources */,
 				DCD979F0256051B2002E2BD3 /* ViewControllers */,
 				DCD979EC255F3177002E2BD3 /* Views */,
 				DCD979E1255F276D002E2BD3 /* Extensions */,
 				DCD979CA255F2252002E2BD3 /* AppDelegate.swift */,
 				DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */,
-				DCD979CE255F2252002E2BD3 /* ViewController.swift */,
 				DCD979D0255F2252002E2BD3 /* Main.storyboard */,
 				DCD979D3255F2254002E2BD3 /* Assets.xcassets */,
 				DCD979D5255F2254002E2BD3 /* LaunchScreen.storyboard */,
@@ -92,6 +102,7 @@
 				DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */,
 				DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */,
 				DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */,
+				DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -100,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				DCD979ED255F3189002E2BD3 /* ColorCell.swift */,
+				DCD979FB256120DF002E2BD3 /* LayoutTypeCell.swift */,
+				DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */,
+				DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +121,7 @@
 		DCD979F0256051B2002E2BD3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DCD979CE255F2252002E2BD3 /* ViewController.swift */,
 				DCD979F1256051C0002E2BD3 /* ListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -118,6 +133,14 @@
 				DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		DCD97A04256121FA002E2BD3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCD97A0525612204002E2BD3 /* LayoutType.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +203,7 @@
 				DCD979D7255F2254002E2BD3 /* LaunchScreen.storyboard in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
 				DCD979D2255F2252002E2BD3 /* Main.storyboard in Resources */,
+				DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,15 +214,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
+				DCD97A012561215D002E2BD3 /* UICollectionCell+Extension.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
+				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
 				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
+				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

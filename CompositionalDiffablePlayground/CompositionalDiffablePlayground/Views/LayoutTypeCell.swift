@@ -7,11 +7,20 @@
 
 import UIKit
 
-class LayoutTypeCell: UICollectionViewCell {
-
+class LayoutTypeCell: RoundedCornersCollectionCell {
+    @IBOutlet var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: String(describing: self), bundle: nil)
+    }
+    
+    func configure(with layout: LayoutType) {
+        titleLabel.text = layout.name
+        contentView.backgroundColor = layout.color
     }
 
 }

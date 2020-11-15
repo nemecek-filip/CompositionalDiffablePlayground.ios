@@ -5,4 +5,9 @@
 //  Created by Filip Němeček on 15/11/2020.
 //
 
-import Foundation
+import UIKit
+
+struct LayoutType: Hashable {
+    let name: String
+    let color: UIColor
+}

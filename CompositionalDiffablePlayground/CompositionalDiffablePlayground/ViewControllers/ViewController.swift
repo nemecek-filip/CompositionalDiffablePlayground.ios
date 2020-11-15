@@ -12,7 +12,14 @@ typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
 class ViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
-    var datasource: UICollectionViewDiffableDataSource<Int, UIColor>!
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, SectionItem>
+    
+    enum SectionItem: Hashable {
+        case layoutType(layout: LayoutType)
+        case color(color: UIColor)
+    }
+    
+    var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +30,7 @@ class ViewController: UIViewController {
     }
     
     private func setupView() {
+        collectionView.register(LayoutTypeCell.nib, forCellWithReuseIdentifier: LayoutTypeCell.reuseIdentifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
         collectionView.delegate = self
         
@@ -34,16 +42,26 @@ class ViewController: UIViewController {
     }
     
     private func configureDatasource() {
-        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, color) -> UICollectionViewCell? in
+        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath)
-            cell.contentView.backgroundColor = color
-            return cell
+            switch item {
+            case .color(let color):
+                
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath)
+                cell.contentView.backgroundColor = color
+                return cell
+                
+            case .layoutType(let layout):
+                
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LayoutTypeCell.reuseIdentifier, for: indexPath) as! LayoutTypeCell
+                cell.configure(with: layout)
+                return cell
+            }
         })
     }
     
     private func generateData(animated: Bool) {
-        var snapshot = ColorsSnapshot()
+        var snapshot = Snapshot()
         
         var sections = [Int]()
         
@@ -53,11 +71,13 @@ class ViewController: UIViewController {
         
         snapshot.appendSections(sections)
         
-        for section in sections {
-            var items = [UIColor]()
+        snapshot.appendItems([.layoutType(layout: LayoutType(name: "List Layout", color: .random()))], toSection: sections.first)
+        
+        for section in sections.dropFirst() {
+            var items = [SectionItem]()
             
             for _ in 4...Int.random(in: 7...12) {
-                items.append(.random())
+                items.append(.color(color: .random()))
             }
             
             // Probably not a good use of a map

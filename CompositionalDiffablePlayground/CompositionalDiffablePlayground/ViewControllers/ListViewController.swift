@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class ListViewController: UIViewController {
     var collectionView: UICollectionView!
     

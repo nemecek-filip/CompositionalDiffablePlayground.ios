@@ -7,16 +7,10 @@
 
 import UIKit
 
-class ColorCell: UICollectionViewCell {
+class ColorCell: RoundedCornersCollectionCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        contentView.layer.cornerRadius = 10
     }
     
     override var isHighlighted: Bool {

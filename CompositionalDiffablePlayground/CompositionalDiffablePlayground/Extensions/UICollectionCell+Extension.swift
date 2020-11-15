@@ -5,4 +5,10 @@
 //  Created by Filip Němeček on 15/11/2020.
 //
 
-import Foundation
+import UIKit
+
+extension UICollectionViewCell {
+    static var reuseIdentifier: String {
+        return String(describing: Self.self)
+    }
+}
