@@ -162,7 +162,7 @@ class ViewController: UIViewController {
             } else if 1...3 ~= sectionIndex {
                 return self.mediumSection()
             } else {
-                let itemCount = self.datasource.collectionView(self.collectionView, numberOfItemsInSection: sectionIndex)
+                let itemCount = self.datasource.snapshot().numberOfItems(inSection: sectionIndex)
                 return self.smallItemsSection(itemCount: itemCount)
             }
         }
