@@ -40,21 +40,10 @@ class ListViewController: UIViewController {
     }
     
     private func loadData() {
-        var snapshot = ColorsSnapshot()
-        
-        snapshot.appendSections([0])
-        
-        var items = [UIColor]()
-        for _ in 0...10 {
-            items.append(UIColor.random())
-        }
-        snapshot.appendItems(items)
-        
-        datasource.apply(snapshot)
+        datasource.apply(ColorsSnapshot.random())
     }
     
     private func createLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout(section: .listLayout())
     }
-    
 }

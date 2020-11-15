@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CA255F2252002E2BD3 /* AppDelegate.swift */; };
 		DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */; };
 		DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CE255F2252002E2BD3 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCD979C7255F2252002E2BD3 /* CompositionalDiffablePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalDiffablePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD979CA255F2252002E2BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */,
 				DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */,
 				DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */,
+				DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DCD97A012561215D002E2BD3 /* UICollectionCell+Extension.swift in Sources */,
+				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
