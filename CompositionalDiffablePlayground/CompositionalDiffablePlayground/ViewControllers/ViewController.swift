@@ -19,6 +19,11 @@ class ViewController: UIViewController {
         case color(color: UIColor)
     }
     
+    private let layoutTypes: [SectionItem] = [
+        .layoutType(layout: LayoutType(name: "List Layout", color: .random())),
+        .layoutType(layout: LayoutType(name: "Simple Grid Layout", color: .random()))
+    ]
+    
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
     
     override func viewDidLoad() {
@@ -71,7 +76,7 @@ class ViewController: UIViewController {
         
         snapshot.appendSections(sections)
         
-        snapshot.appendItems([.layoutType(layout: LayoutType(name: "List Layout", color: .random()))], toSection: sections.first)
+        snapshot.appendItems(layoutTypes, toSection: sections.first)
         
         for section in sections.dropFirst() {
             var items = [SectionItem]()
@@ -174,8 +179,15 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard indexPath.section == 0 else { return }
         
-        let listVC = ListViewController()
-        navigationController?.pushViewController(listVC, animated: true)
+        let vc: UIViewController
+        
+        if indexPath.row == 0 {
+            vc = ListViewController()
+        } else {
+            vc = SimpleGridViewController()
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

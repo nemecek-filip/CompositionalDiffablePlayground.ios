@@ -1,29 +1,25 @@
 //
-//  ListViewController.swift
+//  SimpleGridViewController.swift
 //  CompositionalDiffablePlayground
 //
-//  Created by Filip Němeček on 14/11/2020.
+//  Created by Filip Němeček on 15/11/2020.
 //
 
 import UIKit
 
-class ListViewController: CompositionalCollectionViewViewController {
+class SimpleGridViewController: CompositionalCollectionViewViewController {
     
     var datasource: ColoredDiffableDataSource!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "List example"
+
+        title = "Simple Grid example"
 
         collectionView.register(ColorCell.self, forCellWithReuseIdentifier: "ColorCell")
         
         datasource = ColoredDiffableDataSource(collectionView: collectionView)
         
-        loadData()
-    }
-    
-    private func loadData() {
         datasource.apply(ColorsSnapshot.random())
     }
     
