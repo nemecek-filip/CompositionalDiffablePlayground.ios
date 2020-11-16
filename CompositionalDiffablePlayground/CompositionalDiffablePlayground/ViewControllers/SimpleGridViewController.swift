@@ -17,7 +17,25 @@ class SimpleGridViewController: CompositionalCollectionViewViewController {
     
     var datasource: ColoredDiffableDataSource!
     
-    var gridItemSize: GridItemSize = .half
+    var gridItemSize: GridItemSize = .half {
+        didSet {
+            collectionView.setCollectionViewLayout(createLayout(), animated: true)
+        }
+    }
+    
+    private lazy var sizeMenu: UIMenu = {
+        return UIMenu(title: "Select size", image: nil, identifier: nil, options: [.displayInline], children: [
+            UIAction(title: "Half", image: UIImage(systemName: "square.grid.2x2.fill"), handler: { (_) in
+                self.gridItemSize = .half
+            }),
+            UIAction(title: "Third", image: UIImage(systemName: "square.grid.3x2.fill"), handler: { (_) in
+                self.gridItemSize = .third
+            }),
+            UIAction(title: "Quarter", image: UIImage(systemName: "square.grid.4x3.fill"), handler: { (_) in
+                self.gridItemSize = .quarter
+            }),
+        ])
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +47,35 @@ class SimpleGridViewController: CompositionalCollectionViewViewController {
         datasource = ColoredDiffableDataSource(collectionView: collectionView)
         
         datasource.apply(ColorsSnapshot.random())
+        
+        if #available(iOS 14.0, *) {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(systemItem: .edit, primaryAction: nil, menu: sizeMenu)
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(showSizeSelection))
+        }
+    }
+    
+    @objc func showSizeSelection() {
+        let ac = UIAlertController(title: "Select size", message: nil, preferredStyle: .alert)
+        
+        ac.addAction(UIAlertAction(title: "Half", style: .default, handler: { (_) in
+            self.gridItemSize = .half
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Third", style: .default, handler: { (_) in
+            self.gridItemSize = .third
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Quarter", style: .default, handler: { (_) in
+            self.gridItemSize = .quarter
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(ac, animated: true)
     }
     
     override func createLayout() -> UICollectionViewLayout {
-        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(gridItemSize.rawValue),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
