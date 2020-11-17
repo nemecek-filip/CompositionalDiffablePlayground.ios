@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     private func setupView() {
         collectionView.register(LayoutTypeCell.nib, forCellWithReuseIdentifier: LayoutTypeCell.reuseIdentifier)
+        collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
         collectionView.delegate = self
         
@@ -63,6 +64,20 @@ class ViewController: UIViewController {
                 return cell
             }
         })
+        
+        datasource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+            guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+            
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
+            
+            if indexPath.section == 0 {
+                header.configure(with: "Example layouts")
+            } else {
+                header.configure(with: "Responsive section items")
+            }
+            
+            return header
+        }
     }
     
     private func generateData(animated: Bool) {
@@ -96,6 +111,7 @@ class ViewController: UIViewController {
     
     private func topSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem.withEntireSize()
+        item.contentInsets = NSDirectionalEdgeInsets(horizontal: 10, vertical: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(0.32))
@@ -104,6 +120,8 @@ class ViewController: UIViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        addStandardHeader(toSection: section)
         
         return section
     }
@@ -117,15 +135,7 @@ class ViewController: UIViewController {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .fractionalHeight(0.3))
         
-        let maxVisibleCount = 8
-        
-        let fractionalWidthToFillSpace: CGFloat
-        if itemCount < maxVisibleCount {
-            let half = (Double(itemCount) / 2)
-            fractionalWidthToFillSpace = CGFloat(1 / half.rounded(.up))
-        } else {
-            fractionalWidthToFillSpace = 0.25
-        }
+        let fractionalWidthToFillSpace = calculateResponsiveFractionalWidth(itemCount: itemCount, maxVisibleCount: 8)
         
         let verticalSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionalWidthToFillSpace), heightDimension: .fractionalHeight(1.0))
         
@@ -137,7 +147,27 @@ class ViewController: UIViewController {
         
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
         
+        addStandardHeader(toSection: section)
+        
         return section
+    }
+    
+    private func addStandardHeader(toSection section: NSCollectionLayoutSection) {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [headerElement]
+    }
+    
+    private func calculateResponsiveFractionalWidth(itemCount: Int, maxVisibleCount: Int) -> CGFloat {
+        let fractionalWidthToFillSpace: CGFloat
+        if itemCount < maxVisibleCount {
+            let half = (Double(itemCount) / 2)
+            fractionalWidthToFillSpace = CGFloat(1 / half.rounded(.up))
+        } else {
+            fractionalWidthToFillSpace = 0.25
+        }
+        
+        return fractionalWidthToFillSpace
     }
     
     private func mediumSection() -> NSCollectionLayoutSection {
