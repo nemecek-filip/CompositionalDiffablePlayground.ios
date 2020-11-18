@@ -20,8 +20,9 @@ class ViewController: UIViewController {
     }
     
     private let layoutTypes: [SectionItem] = [
-        .layoutType(layout: LayoutType(name: "List Layout", color: .random())),
-        .layoutType(layout: LayoutType(name: "Simple Grid Layout", color: .random()))
+        .layoutType(layout: LayoutType(name: "List Layout", color: .random(), layout: .list)),
+        .layoutType(layout: LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
+        .layoutType(layout: LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -208,16 +209,22 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard indexPath.section == 0 else { return }
+        guard let item = datasource.itemIdentifier(for: indexPath) else { return }
         
-        let vc: UIViewController
-        
-        if indexPath.row == 0 {
-            vc = ListViewController()
-        } else {
-            vc = SimpleGridViewController()
+        switch item {
+        case .layoutType(let layoutType):
+            let vc: UIViewController
+            switch layoutType.layout {
+            case .list:
+                vc = ListViewController()
+            case .simpleGrid:
+                vc = SimpleGridViewController()
+            case .lazyGrid:
+                vc = LazyGridViewController()
+            }
+            navigationController?.pushViewController(vc, animated: true)
+        default: break
         }
-        
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

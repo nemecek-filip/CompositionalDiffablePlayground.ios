@@ -7,7 +7,14 @@
 
 import UIKit
 
+enum ExampleLayout {
+    case list
+    case simpleGrid
+    case lazyGrid
+}
+
 struct LayoutType: Hashable {
     let name: String
     let color: UIColor
+    let layout: ExampleLayout
 }

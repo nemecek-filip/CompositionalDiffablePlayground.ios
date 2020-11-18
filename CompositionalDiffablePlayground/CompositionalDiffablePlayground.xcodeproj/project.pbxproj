@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
+		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4845256126A200341818 /* SimpleGridViewController.swift */; };
 		DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
+		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCBE4845256126A200341818 /* SimpleGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGridViewController.swift; sourceTree = "<group>"; };
 		DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				DCD979F1256051C0002E2BD3 /* ListViewController.swift */,
 				DCBE4845256126A200341818 /* SimpleGridViewController.swift */,
 				DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */,
+				DC4D685C2565A52300A90329 /* LazyGridViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */,
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,
+				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
