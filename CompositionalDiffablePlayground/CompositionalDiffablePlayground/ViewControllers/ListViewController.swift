@@ -17,6 +17,7 @@ class ListViewController: CompositionalCollectionViewViewController {
         title = "List example"
 
         collectionView.register(ColorCell.self, forCellWithReuseIdentifier: "ColorCell")
+        collectionView.contentInset.top = 10
         
         datasource = ColoredDiffableDataSource(collectionView: collectionView)
         

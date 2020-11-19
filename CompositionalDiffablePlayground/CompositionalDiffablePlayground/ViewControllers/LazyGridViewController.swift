@@ -14,6 +14,15 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
     
     private var loadingInProgress = false
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        indicator.hidesWhenStopped = true
+        
+        return indicator
+    }()
+    
     var datasource: ColoredDiffableDataSource!
     
     override func viewDidLoad() {
@@ -29,6 +38,14 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
     }
     
     private func setupView() {
+        let layoutGuide = view.safeAreaLayoutGuide
+        view.addSubview(loadingIndicator)
+        
+        NSLayoutConstraint.activate([
+            layoutGuide.centerXAnchor.constraint(equalTo: loadingIndicator.centerXAnchor),
+            layoutGuide.bottomAnchor.constraint(equalTo: loadingIndicator.bottomAnchor, constant: 10)
+        ])
+        
         collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.contentInset.bottom = 50
@@ -46,6 +63,7 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
         guard datasource.snapshot().numberOfItems < maxItemCount else { return }
         guard !loadingInProgress else { return }
         loadingInProgress = true
+        loadingIndicator.startAnimating()
         
         var snapshot = datasource.snapshot()
         if snapshot.numberOfSections == 0 {
@@ -54,7 +72,6 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
         
         snapshot.addRandomItems(count: 12)
         
-        // Without main.async I was getting deadlock error and not 100% sure why
         let loadTime: TimeInterval = isInitialLoad ? 0 : 1.4
         DispatchQueue.main.asyncAfter(deadline: .now() + loadTime) {
             self.datasource.apply(snapshot, animatingDifferences: true)
@@ -62,6 +79,7 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
             self.loadedCount = snapshot.numberOfItems
             self.updateTitle()
             self.loadingInProgress = false
+            self.loadingIndicator.stopAnimating()
         }
     }
     
@@ -87,7 +105,8 @@ extension LazyGridViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard loadedCount != 0 else { return }
         
-        if indexPath.row > loadedCount - 2 {
+        // displaying last item
+        if indexPath.row == loadedCount - 1 {
             loadData()
         }
     }
