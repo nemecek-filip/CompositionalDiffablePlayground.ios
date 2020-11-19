@@ -9,3 +9,11 @@ I plan to update README with concrete code samples once this example app grows a
 Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f)
 
 ![Current main screen](https://nemecek.be/media/images/compositionalDiffableMainScreen_fP0RG7L.gif)
+
+## Resizable grid
+
+![Resizable Grid Example](https://nemecek.be/media/images/CDPResizableGrid.gif)
+
+## Lazy loaded grid - ideal for paging
+
+![Lazy Grid](https://nemecek.be/media/images/CDPLazyGrid.gif)
