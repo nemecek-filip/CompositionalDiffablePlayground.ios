@@ -88,6 +88,7 @@ class SimpleGridViewController: CompositionalCollectionViewViewController {
         let section = NSCollectionLayoutSection(group: group)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
 }

@@ -29,6 +29,6 @@ class ListViewController: CompositionalCollectionViewViewController {
     }
     
     override func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout(section: .listLayout())
+        return UICollectionViewCompositionalLayout.listLayout()
     }
 }
