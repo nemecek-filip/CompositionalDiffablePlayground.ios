@@ -22,7 +22,8 @@ class ViewController: UIViewController {
     private let layoutTypes: [SectionItem] = [
         .layoutType(layout: LayoutType(name: "List Layout", color: .random(), layout: .list)),
         .layoutType(layout: LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
-        .layoutType(layout: LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid))
+        .layoutType(layout: LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
+        .layoutType(layout: LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -204,6 +205,12 @@ class ViewController: UIViewController {
         
         return layout
     }
+    
+    private func showLayoutNotAvailable() {
+        let ac = UIAlertController(title: nil, message: "This layout is available only for iOS 14", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(ac, animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UICollectionViewDelegate {
@@ -213,7 +220,7 @@ extension ViewController: UICollectionViewDelegate {
         
         switch item {
         case .layoutType(let layoutType):
-            let vc: UIViewController
+            let vc: UIViewController?
             switch layoutType.layout {
             case .list:
                 vc = ListViewController()
@@ -221,8 +228,16 @@ extension ViewController: UICollectionViewDelegate {
                 vc = SimpleGridViewController()
             case .lazyGrid:
                 vc = LazyGridViewController()
+            case .systemList:
+                if #available(iOS 14.0, *) {
+                    vc = SystemListViewController()
+                } else {
+                    vc = nil
+                    showLayoutNotAvailable()
+                }
             }
-            navigationController?.pushViewController(vc, animated: true)
+            guard let viewController = vc else { return }
+            navigationController?.pushViewController(viewController, animated: true)
         default: break
         }
     }

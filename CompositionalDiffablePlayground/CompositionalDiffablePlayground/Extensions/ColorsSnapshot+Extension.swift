@@ -8,12 +8,16 @@
 import UIKit
 
 extension ColorsSnapshot {
-    mutating func addRandomItems(count: Int = 10) {
+    mutating func addRandomItems(count: Int = 10, to section: Int? = nil) {
         var items = [UIColor]()
         for _ in 0..<count {
             items.append(UIColor.random())
         }
-        self.appendItems(items)
+        if let section = section {
+            self.appendItems(items, toSection: section)
+        } else {
+            self.appendItems(items)
+        }
     }
     
     static func random() -> ColorsSnapshot {
