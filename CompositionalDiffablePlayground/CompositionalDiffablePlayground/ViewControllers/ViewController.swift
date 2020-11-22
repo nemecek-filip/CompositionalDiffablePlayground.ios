@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     private func setupView() {
         collectionView.register(LayoutTypeCell.nib, forCellWithReuseIdentifier: LayoutTypeCell.reuseIdentifier)
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
+        collectionView.register(SimpleFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
         collectionView.delegate = self
         
@@ -68,7 +69,13 @@ class ViewController: UIViewController {
         })
         
         datasource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
-            guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+            if kind == UICollectionView.elementKindSectionFooter {
+                let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier, for: indexPath) as! SimpleFooterView
+                
+                footer.configure(with: "Thanks for checking out this example!")
+                
+                return footer
+            }
             
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
             
@@ -128,7 +135,7 @@ class ViewController: UIViewController {
         return section
     }
     
-    private func smallItemsSection(itemCount: Int) -> NSCollectionLayoutSection {
+    private func smallItemsSection(itemCount: Int, addFooter: Bool = false) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(0.5))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -150,6 +157,12 @@ class ViewController: UIViewController {
         section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
         
         addStandardHeader(toSection: section)
+        
+        if addFooter {
+            let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(35))
+            let footerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+            section.boundarySupplementaryItems += [footerElement]
+        }
         
         return section
     }
@@ -194,8 +207,10 @@ class ViewController: UIViewController {
             } else if 1...3 ~= sectionIndex {
                 return self.mediumSection()
             } else {
-                let itemCount = self.datasource.snapshot().numberOfItems(inSection: sectionIndex)
-                return self.smallItemsSection(itemCount: itemCount)
+                let snapshot = self.datasource.snapshot()
+                let itemCount = snapshot.numberOfItems(inSection: sectionIndex)
+                let addFooter = snapshot.numberOfSections == sectionIndex + 1
+                return self.smallItemsSection(itemCount: itemCount, addFooter: addFooter)
             }
         }
         

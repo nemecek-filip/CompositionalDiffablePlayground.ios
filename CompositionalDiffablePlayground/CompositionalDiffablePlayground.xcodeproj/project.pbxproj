@@ -14,6 +14,8 @@
 		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4845256126A200341818 /* SimpleGridViewController.swift */; };
 		DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */; };
+		DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */; };
+		DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */; };
 		DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CA255F2252002E2BD3 /* AppDelegate.swift */; };
 		DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */; };
 		DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CE255F2252002E2BD3 /* ViewController.swift */; };
@@ -29,7 +31,6 @@
 		DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */; };
 		DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979FB256120DF002E2BD3 /* LayoutTypeCell.swift */; };
 		DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */; };
-		DCD97A012561215D002E2BD3 /* UICollectionCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */; };
 		DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0525612204002E2BD3 /* LayoutType.swift */; };
 		DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,8 @@
 		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCBE4845256126A200341818 /* SimpleGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGridViewController.swift; sourceTree = "<group>"; };
 		DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewViewController.swift; sourceTree = "<group>"; };
+		DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFooterView.swift; sourceTree = "<group>"; };
+		DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		DCD979C7255F2252002E2BD3 /* CompositionalDiffablePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalDiffablePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD979CA255F2252002E2BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDiffableDatasource.swift; sourceTree = "<group>"; };
 		DCD979FB256120DF002E2BD3 /* LayoutTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTypeCell.swift; sourceTree = "<group>"; };
 		DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutTypeCell.xib; sourceTree = "<group>"; };
-		DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionCell+Extension.swift"; sourceTree = "<group>"; };
 		DCD97A0525612204002E2BD3 /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
 		DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,9 +118,9 @@
 				DCD979E6255F2B7B002E2BD3 /* UIColor+Extension.swift */,
 				DCD979E9255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift */,
 				DCD979F42560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift */,
-				DCD97A002561215D002E2BD3 /* UICollectionCell+Extension.swift */,
 				DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */,
 				DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */,
+				DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 				DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */,
 				DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */,
 				DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */,
+				DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,10 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */,
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
-				DCD97A012561215D002E2BD3 /* UICollectionCell+Extension.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
@@ -256,6 +259,7 @@
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
+				DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
