@@ -11,6 +11,11 @@
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
+		DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */; };
+		DC86AC5B257144830071B7EA /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5A257144830071B7EA /* Joke.swift */; };
+		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
+		DC86AC61257145290071B7EA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC60257145290071B7EA /* Database.swift */; };
+		DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC64257145EC0071B7EA /* JokeDTO.swift */; };
 		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4845256126A200341818 /* SimpleGridViewController.swift */; };
 		DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */; };
@@ -40,6 +45,11 @@
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
+		DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		DC86AC5A257144830071B7EA /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
+		DC86AC60257145290071B7EA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		DC86AC64257145EC0071B7EA /* JokeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDTO.swift; sourceTree = "<group>"; };
 		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCBE4845256126A200341818 /* SimpleGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGridViewController.swift; sourceTree = "<group>"; };
 		DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +87,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC86AC5525713E200071B7EA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */,
+				DC86AC5A257144830071B7EA /* Joke.swift */,
+				DC86AC5D257144890071B7EA /* Managed.swift */,
+				DC86AC60257145290071B7EA /* Database.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		DC86AC63257145E60071B7EA /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				DC86AC64257145EC0071B7EA /* JokeDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		DC86AC68257146040071B7EA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		DCD979BE255F2252002E2BD3 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +132,8 @@
 		DCD979C9255F2252002E2BD3 /* CompositionalDiffablePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DC86AC68257146040071B7EA /* Networking */,
+				DC86AC5525713E200071B7EA /* Database */,
 				DCD97A04256121FA002E2BD3 /* Model */,
 				DCD979F7256076F4002E2BD3 /* DataSources */,
 				DCD979F0256051B2002E2BD3 /* ViewControllers */,
@@ -162,6 +200,7 @@
 		DCD97A04256121FA002E2BD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC86AC63257145E60071B7EA /* DTO */,
 				DCD97A0525612204002E2BD3 /* LayoutType.swift */,
 			);
 			path = Model;
@@ -242,15 +281,19 @@
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
+				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
+				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
 				DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
 				DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */,
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
+				DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */,
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,
+				DC86AC5B257144830071B7EA /* Joke.swift in Sources */,
 				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
@@ -259,6 +302,7 @@
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
+				DC86AC61257145290071B7EA /* Database.swift in Sources */,
 				DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +507,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */,
+			);
+			currentVersion = DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */;
+			path = Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DCD979BF255F2252002E2BD3 /* Project object */;
 }
