@@ -8,6 +8,8 @@
 import Foundation
 import CoreData
 
+
+// https://nemecek.be/blog/41/my-approach-to-setting-up-core-data-stack
 class Database {
     static let shared = Database()
     private var persistentContainer: NSPersistentContainer!
