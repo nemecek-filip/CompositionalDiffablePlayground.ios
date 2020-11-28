@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC054B322572F46300FED77A /* SimpleNetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B312572F46300FED77A /* SimpleNetworkHelper.swift */; };
+		DC054B352572F52C00FED77A /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B342572F52C00FED77A /* JokesViewController.swift */; };
+		DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B372572F5FE00FED77A /* JokeCell.swift */; };
+		DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC054B382572F5FE00FED77A /* JokeCell.xib */; };
+		DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B3D2572F71600FED77A /* CellFromNib.swift */; };
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC054B312572F46300FED77A /* SimpleNetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNetworkHelper.swift; sourceTree = "<group>"; };
+		DC054B342572F52C00FED77A /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
+		DC054B372572F5FE00FED77A /* JokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCell.swift; sourceTree = "<group>"; };
+		DC054B382572F5FE00FED77A /* JokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JokeCell.xib; sourceTree = "<group>"; };
+		DC054B3D2572F71600FED77A /* CellFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromNib.swift; sourceTree = "<group>"; };
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
@@ -87,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC054B3C2572F70F00FED77A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DC054B3D2572F71600FED77A /* CellFromNib.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DC86AC5525713E200071B7EA /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +127,7 @@
 		DC86AC68257146040071B7EA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DC054B312572F46300FED77A /* SimpleNetworkHelper.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -132,6 +151,7 @@
 		DCD979C9255F2252002E2BD3 /* CompositionalDiffablePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				DC054B3C2572F70F00FED77A /* Protocols */,
 				DC86AC68257146040071B7EA /* Networking */,
 				DC86AC5525713E200071B7EA /* Database */,
 				DCD97A04256121FA002E2BD3 /* Model */,
@@ -172,6 +192,8 @@
 				DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */,
 				DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */,
 				DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */,
+				DC054B372572F5FE00FED77A /* JokeCell.swift */,
+				DC054B382572F5FE00FED77A /* JokeCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +207,7 @@
 				DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */,
 				DC4D685C2565A52300A90329 /* LazyGridViewController.swift */,
 				DC59B00325696A6900C5E260 /* SystemListViewController.swift */,
+				DC054B342572F52C00FED77A /* JokesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD979D7255F2254002E2BD3 /* LaunchScreen.storyboard in Resources */,
+				DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
 				DCD979D2255F2252002E2BD3 /* Main.storyboard in Resources */,
 				DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */,
@@ -285,7 +309,9 @@
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
+				DC054B322572F46300FED77A /* SimpleNetworkHelper.swift in Sources */,
 				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
+				DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */,
 				DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
@@ -302,7 +328,9 @@
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
+				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,
+				DC054B352572F52C00FED77A /* JokesViewController.swift in Sources */,
 				DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

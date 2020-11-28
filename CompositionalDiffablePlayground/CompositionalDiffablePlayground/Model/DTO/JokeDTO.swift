@@ -12,3 +12,13 @@ struct JokeDTO: Decodable {
     let setup: String
     let punchline: String
 }
+
+extension JokeDTO: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func ==(lhs: JokeDTO, rhs: JokeDTO) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

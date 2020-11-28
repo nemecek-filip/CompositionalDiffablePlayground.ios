@@ -39,7 +39,7 @@ class Database {
     }
     
     func prepare() {
-        persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer = NSPersistentContainer(name: "Database")
         persistentContainer.loadPersistentStores { storeDescription, error in
             if let error = error {
                 print("Unresolved error \(error)")

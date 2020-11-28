@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LayoutTypeCell: RoundedCornersCollectionCell {
+class LayoutTypeCell: RoundedCornersCollectionCell, CellFromNib {
     @IBOutlet var titleLabel: UILabel!
     
     private var originalBackgroundColor: UIColor!
@@ -26,9 +26,7 @@ class LayoutTypeCell: RoundedCornersCollectionCell {
         }
     }
     
-    static var nib: UINib {
-        return UINib(nibName: String(describing: self), bundle: nil)
-    }
+    
     
     func configure(with layout: LayoutType) {
         titleLabel.text = layout.name
