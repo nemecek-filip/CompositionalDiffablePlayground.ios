@@ -12,9 +12,11 @@ class CompositionalCollectionViewViewController: UIViewController {
     
     override func loadView() {
         view = UIView()
+        view.backgroundColor = .systemBackground
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([

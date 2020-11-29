@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -18,16 +18,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="366" height="157"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you make holy water?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-xj-czN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="How do you make holy water?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-xj-czN">
                         <rect key="frame" x="15" y="24" width="336" height="24"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="You boil the hell out of it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiA-p3-FVw">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="You boil the hell out of it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiA-p3-FVw">
                         <rect key="frame" x="15" y="68" width="336" height="69"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -35,9 +35,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemBlueColor"/>
             <constraints>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="jiA-p3-FVw" secondAttribute="bottom" constant="20" id="N1F-0N-iEv"/>
-                <constraint firstItem="jiA-p3-FVw" firstAttribute="top" secondItem="mA4-xj-czN" secondAttribute="bottom" constant="20" id="VWr-nl-c5t"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="mA4-xj-czN" secondAttribute="top" constant="20" id="ckH-vu-V37"/>
+                <constraint firstAttribute="bottom" secondItem="jiA-p3-FVw" secondAttribute="bottom" constant="10" id="N1F-0N-iEv"/>
+                <constraint firstItem="jiA-p3-FVw" firstAttribute="top" secondItem="mA4-xj-czN" secondAttribute="bottom" constant="10" id="VWr-nl-c5t"/>
+                <constraint firstItem="mA4-xj-czN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ckH-vu-V37"/>
                 <constraint firstItem="jiA-p3-FVw" firstAttribute="leading" secondItem="mA4-xj-czN" secondAttribute="leading" id="goe-XD-QdV"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mA4-xj-czN" secondAttribute="trailing" constant="15" id="h57-Mc-Zd6"/>
                 <constraint firstItem="jiA-p3-FVw" firstAttribute="trailing" secondItem="mA4-xj-czN" secondAttribute="trailing" id="kxg-AD-flw"/>
@@ -48,7 +48,7 @@
                 <outlet property="punchlineLabel" destination="jiA-p3-FVw" id="cPG-gQ-Mci"/>
                 <outlet property="setupLabel" destination="mA4-xj-czN" id="9lu-yr-fkr"/>
             </connections>
-            <point key="canvasLocation" x="369.56521739130437" y="156.36160714285714"/>
+            <point key="canvasLocation" x="368" y="159.67016491754123"/>
         </collectionViewCell>
     </objects>
     <resources>

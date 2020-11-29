@@ -51,6 +51,16 @@ class JokesViewController: CompositionalCollectionViewViewController {
     }
     
     override func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout.listLayout()
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(120))
+        
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: itemSize, subitems: [layoutItem])
+        layoutGroup.contentInsets = NSDirectionalEdgeInsets(horizontal: 10, vertical: 0)
+        
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        layoutSection.interGroupSpacing = 10
+        
+        return UICollectionViewCompositionalLayout(section: layoutSection)
     }
 }
