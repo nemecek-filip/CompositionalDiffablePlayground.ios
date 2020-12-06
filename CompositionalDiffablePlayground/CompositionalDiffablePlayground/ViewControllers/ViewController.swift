@@ -238,7 +238,7 @@ extension ViewController: UICollectionViewDelegate {
             let vc: UIViewController?
             switch layoutType.layout {
             case .list:
-                vc = ListViewController()
+                vc = JokesViewController()
             case .simpleGrid:
                 vc = SimpleGridViewController()
             case .lazyGrid:

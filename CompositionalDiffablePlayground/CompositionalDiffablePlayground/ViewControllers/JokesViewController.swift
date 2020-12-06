@@ -9,12 +9,21 @@ import UIKit
 
 class JokesViewController: CompositionalCollectionViewViewController {
     
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, JokeDTO>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, Item>
     
-    var datasource: UICollectionViewDiffableDataSource<Sections, JokeDTO>!
+    var datasource: UICollectionViewDiffableDataSource<Sections, Item>!
     
     enum Sections: Hashable {
         case jokes
+    }
+    
+    enum Item: Hashable {
+        case loading(UUID)
+        case joke(JokeDTO)
+        
+        static var loadings: [Item] {
+            return [.loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID())]
+        }
     }
     
     override func viewDidLoad() {
@@ -23,6 +32,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
         title = "Jokes"
         
         collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
+        collectionView.contentInset.top = 10
         
         configureDatasource()
         
@@ -30,11 +40,25 @@ class JokesViewController: CompositionalCollectionViewViewController {
     }
     
     func configureDatasource() {
-        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, joke) -> UICollectionViewCell? in
+        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JokeCell.reuseIdentifier, for: indexPath) as! JokeCell
-            cell.configure(withJoke: joke)
+            
+            switch item {
+            case .joke(let jokeDto):
+                cell.configure(withJoke: jokeDto)
+                
+            case .loading(_):
+                cell.showLoading()
+            }
+            
+            
             return cell
         })
+        
+        var snapshot = Snapshot()
+        snapshot.appendSections([.jokes])
+        snapshot.appendItems(Item.loadings)
+        datasource.apply(snapshot)
     }
     
     func loadJokes() {
@@ -42,10 +66,12 @@ class JokesViewController: CompositionalCollectionViewViewController {
             if let jokes = jokes {
                 var snapshot = Snapshot()
                 snapshot.appendSections([.jokes])
-                snapshot.appendItems(jokes)
+                snapshot.appendItems(jokes.map{ Item.joke($0) })
                 
-                // it is safe to call apply from background thread. But it must not be mixed with calling from main
-                self.datasource.apply(snapshot, animatingDifferences: true)
+                DispatchQueue.main.async {
+                    self.datasource.apply(snapshot, animatingDifferences: true)
+                }
+                
             }
         }
     }

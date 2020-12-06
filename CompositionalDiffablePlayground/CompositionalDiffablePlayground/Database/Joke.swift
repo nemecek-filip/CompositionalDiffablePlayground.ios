@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-@objc(Joke)
 class Joke: NSManagedObject, Managed {
     @NSManaged var id: Int
     @NSManaged var setup: String

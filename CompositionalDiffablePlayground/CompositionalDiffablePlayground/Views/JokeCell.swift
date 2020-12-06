@@ -11,6 +11,8 @@ class JokeCell: UICollectionViewCell, CellFromNib {
     @IBOutlet var setupLabel: UILabel!
     @IBOutlet var punchlineLabel: UILabel!
     
+    private var shimmerLayer: CALayer?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,6 +25,40 @@ class JokeCell: UICollectionViewCell, CellFromNib {
     func configure(withJoke joke: JokeDTO) {
         setupLabel.text = joke.setup
         punchlineLabel.text = joke.punchline
+    }
+    
+    func showLoading() {
+        let light = UIColor(white: 0, alpha: 0.1).cgColor
+
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.clear.cgColor, light, UIColor.clear.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.525)
+        gradient.locations = [0.4, 0.5, 0.6]
+
+        gradient.frame = CGRect(x: -contentView.bounds.width, y: 0, width: contentView.bounds.width * 3, height: contentView.bounds.height)
+
+        let animation = CABasicAnimation(keyPath: "locations")
+        animation.fromValue = [0.0, 0.1, 0.2]
+        animation.toValue = [0.8, 0.9, 1.0]
+
+        animation.repeatCount = .infinity
+        animation.duration = 1.1
+        animation.isRemovedOnCompletion = false
+
+        gradient.add(animation, forKey: "shimmer")
+        
+        contentView.layer.addSublayer(gradient)
+        
+        shimmerLayer = gradient
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        setupLabel.text = nil
+        punchlineLabel.text = nil
+        
+        shimmerLayer?.removeFromSuperlayer()
     }
 
 }
