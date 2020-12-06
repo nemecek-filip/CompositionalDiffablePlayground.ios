@@ -16,6 +16,7 @@
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
+		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
 		DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */; };
 		DC86AC5B257144830071B7EA /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5A257144830071B7EA /* Joke.swift */; };
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
@@ -55,6 +56,7 @@
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
+		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		DC86AC5A257144830071B7EA /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */,
 				DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */,
 				DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */,
+				DC5DB885257D162E00181DCF /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
+				DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */,
 				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,

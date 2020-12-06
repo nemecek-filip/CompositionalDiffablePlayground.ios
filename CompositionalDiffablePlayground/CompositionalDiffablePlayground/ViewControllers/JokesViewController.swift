@@ -9,11 +9,12 @@ import UIKit
 
 class JokesViewController: CompositionalCollectionViewViewController {
     
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Sections, Item>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
+    typealias Datasource = UICollectionViewDiffableDataSource<Section, Item>
     
-    var datasource: UICollectionViewDiffableDataSource<Sections, Item>!
+    var datasource: Datasource!
     
-    enum Sections: Hashable {
+    enum Section: Hashable {
         case jokes
     }
     
@@ -21,47 +22,67 @@ class JokesViewController: CompositionalCollectionViewViewController {
         case loading(UUID)
         case joke(JokeDTO)
         
-        static var loadings: [Item] {
-            return [.loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID()), .loading(UUID())]
+        static var loadingItems: [Item] {
+            return Array(repeatingExpression: Item.loading(UUID()), count: 8)
         }
     }
+    
+    private var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Jokes"
-        
-        collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
-        collectionView.contentInset.top = 10
+        setupView()
         
         configureDatasource()
         
         loadJokes()
     }
     
-    func configureDatasource() {
-        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JokeCell.reuseIdentifier, for: indexPath) as! JokeCell
-            
-            switch item {
-            case .joke(let jokeDto):
-                cell.configure(withJoke: jokeDto)
-                
-            case .loading(_):
-                cell.showLoading()
-            }
-            
-            
-            return cell
-        })
+    func setupView() {
+        title = "Jokes"
         
+        collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
+        collectionView.contentInset.top = 10
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(refreshTapped))
+    }
+    
+    @objc func refreshTapped() {
+        guard !isLoading else { return }
+        datasource.apply(loadingSnapshot(), animatingDifferences: true)
+        loadJokes()
+    }
+    
+    func configureDatasource() {
+        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        
+        datasource.apply(loadingSnapshot())
+    }
+    
+    func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JokeCell.reuseIdentifier, for: indexPath) as! JokeCell
+        
+        switch item {
+        case .joke(let jokeDto):
+            cell.configure(withJoke: jokeDto)
+            
+        case .loading(_):
+            cell.showLoading()
+        }
+        
+        return cell
+    }
+    
+    func loadingSnapshot() -> Snapshot {
         var snapshot = Snapshot()
         snapshot.appendSections([.jokes])
-        snapshot.appendItems(Item.loadings)
-        datasource.apply(snapshot)
+        snapshot.appendItems(Item.loadingItems)
+        return snapshot
     }
     
     func loadJokes() {
+        isLoading = true
         SimpleNetworkHelper.shared.getJokes { (jokes) in
             if let jokes = jokes {
                 var snapshot = Snapshot()
@@ -73,6 +94,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
                 }
                 
             }
+            
+            self.isLoading = false
         }
     }
     
