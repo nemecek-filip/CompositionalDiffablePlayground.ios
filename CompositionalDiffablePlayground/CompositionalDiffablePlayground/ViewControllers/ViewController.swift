@@ -15,15 +15,15 @@ class ViewController: UIViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, SectionItem>
     
     enum SectionItem: Hashable {
-        case layoutType(layout: LayoutType)
-        case color(color: UIColor)
+        case layoutType(LayoutType)
+        case color(UIColor)
     }
     
     private let layoutTypes: [SectionItem] = [
-        .layoutType(layout: LayoutType(name: "List Layout", color: .random(), layout: .list)),
-        .layoutType(layout: LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
-        .layoutType(layout: LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
-        .layoutType(layout: LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
+        .layoutType(LayoutType(name: "List Layout", color: .random(), layout: .list)),
+        .layoutType(LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
+        .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
+        .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
             var items = [SectionItem]()
             
             for _ in 4...Int.random(in: 7...12) {
-                items.append(.color(color: .random()))
+                items.append(.color(.random()))
             }
             
             // Probably not a good use of a map
@@ -238,7 +238,7 @@ extension ViewController: UICollectionViewDelegate {
             let vc: UIViewController?
             switch layoutType.layout {
             case .list:
-                vc = JokesViewController()
+                vc = ListViewController()
             case .simpleGrid:
                 vc = SimpleGridViewController()
             case .lazyGrid:

@@ -12,6 +12,7 @@
 		DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B372572F5FE00FED77A /* JokeCell.swift */; };
 		DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC054B382572F5FE00FED77A /* JokeCell.xib */; };
 		DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B3D2572F71600FED77A /* CellFromNib.swift */; };
+		DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E1442257EBD2F00777498 /* ComplexExample.swift */; };
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
@@ -52,6 +53,7 @@
 		DC054B372572F5FE00FED77A /* JokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCell.swift; sourceTree = "<group>"; };
 		DC054B382572F5FE00FED77A /* JokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JokeCell.xib; sourceTree = "<group>"; };
 		DC054B3D2572F71600FED77A /* CellFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromNib.swift; sourceTree = "<group>"; };
+		DC1E1442257EBD2F00777498 /* ComplexExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexExample.swift; sourceTree = "<group>"; };
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				DC86AC63257145E60071B7EA /* DTO */,
 				DCD97A0525612204002E2BD3 /* LayoutType.swift */,
+				DC1E1442257EBD2F00777498 /* ComplexExample.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
+				DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */,
 				DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */,
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
 				DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */,
