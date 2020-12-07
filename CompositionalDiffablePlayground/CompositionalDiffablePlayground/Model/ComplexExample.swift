@@ -5,11 +5,12 @@
 //  Created by Filip Němeček on 07/12/2020.
 //
 
-import Foundation
+import UIKit
 
-struct ComplexExample {
+struct ComplexExample: Hashable {
     let name: String
-    let example: ExampleType
+    let type: ExampleType
+    let color: UIColor
     
     enum ExampleType {
         case jokes

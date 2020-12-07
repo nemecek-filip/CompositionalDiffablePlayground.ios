@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     enum SectionItem: Hashable {
         case layoutType(LayoutType)
         case color(UIColor)
+        case example(ComplexExample)
     }
     
     private let layoutTypes: [SectionItem] = [
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
         .layoutType(LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
         .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
         .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
+    ]
+    
+    private let examples: [SectionItem] = [
+        .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -65,6 +70,11 @@ class ViewController: UIViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LayoutTypeCell.reuseIdentifier, for: indexPath) as! LayoutTypeCell
                 cell.configure(with: layout)
                 return cell
+                
+            case .example(let example):
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LayoutTypeCell.reuseIdentifier, for: indexPath) as! LayoutTypeCell
+                cell.configure(with: example)
+                return cell
             }
         })
         
@@ -81,6 +91,8 @@ class ViewController: UIViewController {
             
             if indexPath.section == 0 {
                 header.configure(with: "Example layouts")
+            } else if indexPath.section == 1 {
+                header.configure(with: "More complex examples")
             } else {
                 header.configure(with: "Responsive section items")
             }
@@ -101,11 +113,12 @@ class ViewController: UIViewController {
         snapshot.appendSections(sections)
         
         snapshot.appendItems(layoutTypes, toSection: sections.first)
+        snapshot.appendItems(examples, toSection: sections[1])
         
-        for section in sections.dropFirst() {
+        for section in sections.suffix(from: 2) {
             var items = [SectionItem]()
             
-            for _ in 4...Int.random(in: 7...12) {
+            for _ in 4...Int.random(in: 5...9) {
                 items.append(.color(.random()))
             }
             
@@ -202,9 +215,9 @@ class ViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            if sectionIndex == 0 {
+            if 0...1 ~= sectionIndex {
                 return self.topSection()
-            } else if 1...3 ~= sectionIndex {
+            } else if 2...3 ~= sectionIndex {
                 return self.mediumSection()
             } else {
                 let snapshot = self.datasource.snapshot()
@@ -230,12 +243,14 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.section == 0 else { return }
+        guard 0...1 ~= indexPath.section else { return }
         guard let item = datasource.itemIdentifier(for: indexPath) else { return }
+        
+        let vc: UIViewController?
         
         switch item {
         case .layoutType(let layoutType):
-            let vc: UIViewController?
+            
             switch layoutType.layout {
             case .list:
                 vc = ListViewController()
@@ -251,10 +266,19 @@ extension ViewController: UICollectionViewDelegate {
                     showLayoutNotAvailable()
                 }
             }
-            guard let viewController = vc else { return }
-            navigationController?.pushViewController(viewController, animated: true)
-        default: break
+            
+            
+        case .example(let example):
+            switch example.type {
+            case .jokes:
+                vc = JokesViewController()
+            }
+        default:
+            vc = nil
         }
+        
+        guard let viewController = vc else { return }
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

@@ -26,11 +26,18 @@ class LayoutTypeCell: RoundedCornersCollectionCell, CellFromNib {
         }
     }
     
-    
+    func configure(with example: ComplexExample) {
+        titleLabel.text = example.name
+        configure(color: example.color)
+    }
     
     func configure(with layout: LayoutType) {
         titleLabel.text = layout.name
-        originalBackgroundColor = layout.color
+        configure(color: layout.color)
+    }
+    
+    private func configure(color: UIColor) {
+        originalBackgroundColor = color
         contentView.backgroundColor = originalBackgroundColor.withAlphaComponent(0.6)
     }
 
