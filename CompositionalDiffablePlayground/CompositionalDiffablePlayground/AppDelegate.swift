@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias Action = () -> ()
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

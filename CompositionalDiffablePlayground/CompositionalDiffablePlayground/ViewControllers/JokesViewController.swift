@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class JokesViewController: CompositionalCollectionViewViewController {
     
@@ -13,14 +14,17 @@ class JokesViewController: CompositionalCollectionViewViewController {
     typealias Datasource = UICollectionViewDiffableDataSource<Section, Item>
     
     var datasource: Datasource!
+    var fetchedResultsController: NSFetchedResultsController<Joke>!
     
     enum Section: Hashable {
+        case favoriteJokes
         case jokes
     }
     
     enum Item: Hashable {
         case loading(UUID)
         case joke(JokeDTO)
+        case favorite(Joke)
         
         static var loadingItems: [Item] {
             return Array(repeatingExpression: Item.loading(UUID()), count: 8)
@@ -35,6 +39,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
         setupView()
         
         configureDatasource()
+        initFetchedResultsController()
         
         loadJokes()
     }
@@ -60,12 +65,34 @@ class JokesViewController: CompositionalCollectionViewViewController {
         datasource.apply(loadingSnapshot())
     }
     
+    func initFetchedResultsController() {
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: Joke.sortedFetchRequest, managedObjectContext: Database.shared.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        try! fetchedResultsController.performFetch()
+    }
+
+    func favoriteJoke(_ joke: JokeDTO) {
+        let existing = try? Database.shared.context.fetch(Joke.byIdFetchRequest(id: joke.id)).first
+        
+        guard existing == nil else { return }
+        
+        let new = Joke(context: Database.shared.context)
+        new.configure(with: joke)
+        Database.shared.saveContext()
+    }
+    
     func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JokeCell.reuseIdentifier, for: indexPath) as! JokeCell
         
         switch item {
         case .joke(let jokeDto):
             cell.configure(withJoke: jokeDto)
+            cell.favoriteAction = { [weak self] in
+                self?.favoriteJoke(jokeDto)
+            }
+            
+        case .favorite(let joke):
+            cell.configure(with: joke)
             
         case .loading(_):
             cell.showLoading()
@@ -85,7 +112,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
         isLoading = true
         SimpleNetworkHelper.shared.getJokes { (jokes) in
             if let jokes = jokes {
-                var snapshot = Snapshot()
+                var snapshot = self.datasource.snapshot()
+                snapshot.deleteSections([.jokes])
                 snapshot.appendSections([.jokes])
                 snapshot.appendItems(jokes.map{ Item.joke($0) })
                 
@@ -110,6 +138,27 @@ class JokesViewController: CompositionalCollectionViewViewController {
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.interGroupSpacing = 10
         
-        return UICollectionViewCompositionalLayout(section: layoutSection)
+        let layout = UICollectionViewCompositionalLayout(section: layoutSection)
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 20
+        layout.configuration = config
+        
+        return layout
+    }
+}
+
+extension JokesViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
+        var snapshot = datasource.snapshot()
+        snapshot.deleteSections([.favoriteJokes])
+        snapshot.appendSections([.favoriteJokes])
+        
+        // FIXME - Please let me know if you have more elegant code for this. Mixing FRC and Diffable feels weird at times
+        
+        let jokes: [Item] = fetchedResultsController.fetchedObjects?.map({ Item.favorite($0)}) ?? []
+        
+        snapshot.appendItems(jokes, toSection: .favoriteJokes)
+        datasource.apply(snapshot, animatingDifferences: true)
     }
 }

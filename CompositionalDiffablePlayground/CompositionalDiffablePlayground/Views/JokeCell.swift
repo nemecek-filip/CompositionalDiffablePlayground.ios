@@ -10,8 +10,11 @@ import UIKit
 class JokeCell: UICollectionViewCell, CellFromNib {
     @IBOutlet var setupLabel: UILabel!
     @IBOutlet var punchlineLabel: UILabel!
+    @IBOutlet var favoriteButton: UIButton!
     
     private var shimmerLayer: CALayer?
+    
+    var favoriteAction: Action?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,10 +28,23 @@ class JokeCell: UICollectionViewCell, CellFromNib {
     func configure(withJoke joke: JokeDTO) {
         setupLabel.text = joke.setup
         punchlineLabel.text = joke.punchline
+        favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func configure(with joke: Joke) {
+        setupLabel.text = joke.setup
+        punchlineLabel.text = joke.punchline
+        favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        favoriteAction?()
     }
     
     func showLoading() {
         let light = UIColor(white: 0, alpha: 0.1).cgColor
+        
+        favoriteButton.isHidden = true
 
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.clear.cgColor, light, UIColor.clear.cgColor]
@@ -57,6 +73,7 @@ class JokeCell: UICollectionViewCell, CellFromNib {
         super.prepareForReuse()
         setupLabel.text = nil
         punchlineLabel.text = nil
+        favoriteButton.isHidden = false
         
         shimmerLayer?.removeFromSuperlayer()
     }

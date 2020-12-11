@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="JokeCell" customModule="CompositionalDiffablePlayground" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="366" height="157"/>
+            <rect key="frame" x="0.0" y="0.0" width="433" height="157"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="366" height="157"/>
+                <rect key="frame" x="0.0" y="0.0" width="433" height="157"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="How do you make holy water?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA4-xj-czN">
-                        <rect key="frame" x="15" y="10" width="336" height="97"/>
+                        <rect key="frame" x="15" y="10" width="369" height="97"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mg8-lH-uvS"/>
                         </constraints>
@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="You boil the hell out of it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiA-p3-FVw">
-                        <rect key="frame" x="15" y="117" width="336" height="30"/>
+                        <rect key="frame" x="15" y="117" width="369" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="liv-7v-AXo"/>
                         </constraints>
@@ -36,6 +36,18 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIO-V1-UMY">
+                        <rect key="frame" x="384" y="113" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="OGn-ZV-JMI"/>
+                            <constraint firstAttribute="width" constant="44" id="a4u-yF-GCE"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemYellowColor"/>
+                        <state key="normal" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="hNH-oH-9im"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -43,23 +55,30 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="jiA-p3-FVw" secondAttribute="bottom" constant="10" id="N1F-0N-iEv"/>
                 <constraint firstItem="jiA-p3-FVw" firstAttribute="top" secondItem="mA4-xj-czN" secondAttribute="bottom" constant="10" id="VWr-nl-c5t"/>
+                <constraint firstItem="IIO-V1-UMY" firstAttribute="leading" secondItem="mA4-xj-czN" secondAttribute="trailing" id="Yew-2D-exw"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="IIO-V1-UMY" secondAttribute="bottom" id="brk-M2-czs"/>
                 <constraint firstItem="mA4-xj-czN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ckH-vu-V37"/>
                 <constraint firstItem="jiA-p3-FVw" firstAttribute="leading" secondItem="mA4-xj-czN" secondAttribute="leading" id="goe-XD-QdV"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mA4-xj-czN" secondAttribute="trailing" constant="15" id="h57-Mc-Zd6"/>
                 <constraint firstItem="jiA-p3-FVw" firstAttribute="trailing" secondItem="mA4-xj-czN" secondAttribute="trailing" id="kxg-AD-flw"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="IIO-V1-UMY" secondAttribute="trailing" constant="5" id="s7A-bR-BS6"/>
                 <constraint firstItem="mA4-xj-czN" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="15" id="zLJ-fJ-VC3"/>
             </constraints>
-            <size key="customSize" width="366" height="157"/>
+            <size key="customSize" width="433" height="157"/>
             <connections>
+                <outlet property="favoriteButton" destination="IIO-V1-UMY" id="Fda-FN-Y0N"/>
                 <outlet property="punchlineLabel" destination="jiA-p3-FVw" id="cPG-gQ-Mci"/>
                 <outlet property="setupLabel" destination="mA4-xj-czN" id="9lu-yr-fkr"/>
             </connections>
-            <point key="canvasLocation" x="368" y="159.67016491754123"/>
+            <point key="canvasLocation" x="421.60000000000002" y="158.77061469265368"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

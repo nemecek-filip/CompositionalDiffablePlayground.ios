@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Joke" representedClassName="Joke" syncable="YES">
+        <attribute name="created" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="punchline" attributeType="String"/>
         <attribute name="setup" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Joke" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Joke" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
