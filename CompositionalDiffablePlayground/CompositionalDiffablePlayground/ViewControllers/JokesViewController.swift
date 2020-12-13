@@ -33,6 +33,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     private var isLoading = false
     
+    var fetchedJokes: [JokeDTO]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,20 +57,34 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     @objc func refreshTapped() {
         guard !isLoading else { return }
-        datasource.apply(loadingSnapshot(), animatingDifferences: true)
+        fetchedJokes = nil
+        datasource.apply(snapshot(), animatingDifferences: true)
         loadJokes()
     }
     
     func configureDatasource() {
         datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
-        
-        datasource.apply(loadingSnapshot())
     }
     
     func initFetchedResultsController() {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: Joke.sortedFetchRequest, managedObjectContext: Database.shared.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         try! fetchedResultsController.performFetch()
+    }
+    
+    func snapshot() -> Snapshot {
+        var snapshot = Snapshot()
+        snapshot.appendSections([.favoriteJokes, .jokes])
+        let favorites: [Joke] = fetchedResultsController.fetchedObjects ?? []
+        snapshot.appendItems(favorites.map({ Item.favorite($0) }), toSection: .favoriteJokes)
+        
+        if let fetched = fetchedJokes {
+            snapshot.appendItems(fetched.map({ Item.joke($0)}), toSection: .jokes)
+        } else {
+            snapshot.appendItems(Item.loadingItems, toSection: .jokes)
+        }
+        
+        return snapshot
     }
 
     func favoriteJoke(_ joke: JokeDTO) {
@@ -101,26 +117,18 @@ class JokesViewController: CompositionalCollectionViewViewController {
         return cell
     }
     
-    func loadingSnapshot() -> Snapshot {
-        var snapshot = Snapshot()
-        snapshot.appendSections([.jokes])
-        snapshot.appendItems(Item.loadingItems)
-        return snapshot
-    }
-    
     func loadJokes() {
         isLoading = true
         SimpleNetworkHelper.shared.getJokes { (jokes) in
             if let jokes = jokes {
-                var snapshot = self.datasource.snapshot()
-                snapshot.deleteSections([.jokes])
-                snapshot.appendSections([.jokes])
-                snapshot.appendItems(jokes.map{ Item.joke($0) })
+                self.fetchedJokes = jokes
                 
                 DispatchQueue.main.async {
-                    self.datasource.apply(snapshot, animatingDifferences: true)
+                    self.datasource.apply(self.snapshot(), animatingDifferences: true)
                 }
                 
+            } else {
+                self.fetchedJokes = []
             }
             
             self.isLoading = false
@@ -150,15 +158,6 @@ class JokesViewController: CompositionalCollectionViewViewController {
 
 extension JokesViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
-        var snapshot = datasource.snapshot()
-        snapshot.deleteSections([.favoriteJokes])
-        snapshot.appendSections([.favoriteJokes])
-        
-        // FIXME - Please let me know if you have more elegant code for this. Mixing FRC and Diffable feels weird at times
-        
-        let jokes: [Item] = fetchedResultsController.fetchedObjects?.map({ Item.favorite($0)}) ?? []
-        
-        snapshot.appendItems(jokes, toSection: .favoriteJokes)
-        datasource.apply(snapshot, animatingDifferences: true)
+        datasource.apply(self.snapshot(), animatingDifferences: true)
     }
 }

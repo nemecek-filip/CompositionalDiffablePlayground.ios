@@ -74,6 +74,7 @@ class JokeCell: UICollectionViewCell, CellFromNib {
         setupLabel.text = nil
         punchlineLabel.text = nil
         favoriteButton.isHidden = false
+        favoriteAction = nil
         
         shimmerLayer?.removeFromSuperlayer()
     }
