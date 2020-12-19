@@ -17,7 +17,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
     var fetchedResultsController: NSFetchedResultsController<Joke>!
     
     enum Section: Hashable {
-        case favoriteJokes
+        case favoriteJokes(count: Int)
         case jokes
     }
     
@@ -75,11 +75,15 @@ class JokesViewController: CompositionalCollectionViewViewController {
         try! fetchedResultsController.performFetch()
     }
     
+    // MARK: snapshot()
     func snapshot() -> Snapshot {
         var snapshot = Snapshot()
-        snapshot.appendSections([.favoriteJokes, .jokes])
+        
         let favorites: [Joke] = fetchedResultsController.fetchedObjects ?? []
-        snapshot.appendItems(favorites.map({ Item.favorite($0) }), toSection: .favoriteJokes)
+        let favoritesSection: Section = .favoriteJokes(count: favorites.count)
+        snapshot.appendSections([favoritesSection, .jokes])
+        
+        snapshot.appendItems(favorites.map({ Item.favorite($0) }), toSection: favoritesSection)
         
         if let fetched = fetchedJokes {
             snapshot.appendItems(fetched.map({ Item.joke($0)}), toSection: .jokes)
@@ -128,8 +132,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
         let section = datasource.snapshot().sectionIdentifiers[indexPath.section]
         
         switch section {
-        case .favoriteJokes:
-            header.configure(with: "Favorites")
+        case .favoriteJokes(let count):
+            header.configure(with: "Favorites (\(count))")
         case .jokes:
             header.configure(with: "Random")
         }
