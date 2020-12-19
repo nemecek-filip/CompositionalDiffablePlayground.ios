@@ -125,7 +125,14 @@ class JokesViewController: CompositionalCollectionViewViewController {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
         
-        header.configure(with: "Test header")
+        let section = datasource.snapshot().sectionIdentifiers[indexPath.section]
+        
+        switch section {
+        case .favoriteJokes:
+            header.configure(with: "Favorites")
+        case .jokes:
+            header.configure(with: "Random")
+        }
         
         return header
     }
