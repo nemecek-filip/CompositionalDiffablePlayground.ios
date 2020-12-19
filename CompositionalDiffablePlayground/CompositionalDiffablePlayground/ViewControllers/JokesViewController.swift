@@ -49,6 +49,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
     func setupView() {
         title = "Jokes"
         
+        collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
         collectionView.contentInset.top = 10
         
@@ -64,6 +65,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     func configureDatasource() {
         datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        
+        datasource.supplementaryViewProvider = supplementary(collectionView:kind:indexPath:)
     }
     
     func initFetchedResultsController() {
@@ -117,6 +120,16 @@ class JokesViewController: CompositionalCollectionViewViewController {
         return cell
     }
     
+    func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
+        guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
+        
+        header.configure(with: "Test header")
+        
+        return header
+    }
+    
     func loadJokes() {
         isLoading = true
         SimpleNetworkHelper.shared.getJokes { (jokes) in
@@ -146,6 +159,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
         let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
         layoutSection.interGroupSpacing = 10
         
+        addStandardHeader(toSection: layoutSection)
+        
         let layout = UICollectionViewCompositionalLayout(section: layoutSection)
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
@@ -153,6 +168,12 @@ class JokesViewController: CompositionalCollectionViewViewController {
         layout.configuration = config
         
         return layout
+    }
+    
+    private func addStandardHeader(toSection section: NSCollectionLayoutSection) {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [headerElement]
     }
 }
 
