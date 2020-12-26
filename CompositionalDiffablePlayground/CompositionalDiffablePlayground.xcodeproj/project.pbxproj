@@ -26,6 +26,7 @@
 		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4845256126A200341818 /* SimpleGridViewController.swift */; };
 		DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */; };
+		DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC67DAF25974A2F00CA71EF /* CellRegistrationViewController.swift */; };
 		DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */; };
 		DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */; };
 		DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CA255F2252002E2BD3 /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCBE4845256126A200341818 /* SimpleGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGridViewController.swift; sourceTree = "<group>"; };
 		DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewViewController.swift; sourceTree = "<group>"; };
+		DCC67DAF25974A2F00CA71EF /* CellRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRegistrationViewController.swift; sourceTree = "<group>"; };
 		DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFooterView.swift; sourceTree = "<group>"; };
 		DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
 		DCD979C7255F2252002E2BD3 /* CompositionalDiffablePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalDiffablePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 				DC4D685C2565A52300A90329 /* LazyGridViewController.swift */,
 				DC59B00325696A6900C5E260 /* SystemListViewController.swift */,
 				DC054B342572F52C00FED77A /* JokesViewController.swift */,
+				DCC67DAF25974A2F00CA71EF /* CellRegistrationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
+				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
 				DC054B322572F46300FED77A /* SimpleNetworkHelper.swift in Sources */,
 				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
