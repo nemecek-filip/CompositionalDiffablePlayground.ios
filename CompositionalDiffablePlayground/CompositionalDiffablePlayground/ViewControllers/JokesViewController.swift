@@ -129,6 +129,13 @@ class JokesViewController: CompositionalCollectionViewViewController {
         Database.shared.saveContext()
     }
     
+    func unfavoriteJoke(withId id: Int) {
+        if let joke = try? Database.shared.context.fetch(Joke.byIdFetchRequest(id: id)).first {
+            Database.shared.context.delete(joke)
+            Database.shared.saveContext()
+        }
+    }
+    
     func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell? {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: JokeCell.reuseIdentifier, for: indexPath) as! JokeCell
         
@@ -141,6 +148,10 @@ class JokesViewController: CompositionalCollectionViewViewController {
             
         case .favorite(let joke):
             cell.configure(with: joke)
+            let jokeId = joke.id
+            cell.favoriteAction = { [weak self] in
+                self?.unfavoriteJoke(withId: jokeId)
+            }
             
         case .loading(_):
             cell.showLoading()
@@ -230,15 +241,30 @@ extension JokesViewController: UICollectionViewDelegate {
         guard let item = datasource.itemIdentifier(for: indexPath) else { return nil }
         guard !item.isLoading else { return nil }
         
+        var actions = [UIAction]()
+        
         let speak = UIAction(title: "Hear", image: UIImage(systemName: "ear")) {_ in
             if let joke = item.jokeData {
                 self.speak(joke: joke)
             }
         }
         
+        actions.append(speak)
+        
+        switch item {
+        case .favorite(let favorite):
+            let id = favorite.id
+            let unfavorite = UIAction(title: "Unfavorite", image: UIImage(systemName: "star.slash")) { _ in
+                self.unfavoriteJoke(withId: id)
+            }
+            actions.append(unfavorite)
+        default:
+            break
+        }
+        
         return UIContextMenuConfiguration(identifier: nil,
                                           previewProvider: nil) { _ in
-            UIMenu(title: "Actions", children: [speak])
+            UIMenu(title: "Actions", children: actions)
         }
     }
 }
