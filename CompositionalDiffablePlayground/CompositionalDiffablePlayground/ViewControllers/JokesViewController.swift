@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class JokesViewController: CompositionalCollectionViewViewController {
     
@@ -15,6 +16,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     var datasource: Datasource!
     var fetchedResultsController: NSFetchedResultsController<Joke>!
+    
+    var speechSynthesizer = AVSpeechSynthesizer()
     
     enum Section: Hashable {
         case favoriteJokes(count: Int)
@@ -25,6 +28,15 @@ class JokesViewController: CompositionalCollectionViewViewController {
         case loading(UUID)
         case joke(JokeDTO)
         case favorite(Joke)
+        
+        var isLoading: Bool {
+            switch self {
+            case .loading(_):
+                return true
+            default:
+                return false
+            }
+        }
         
         static var loadingItems: [Item] {
             return Array(repeatingExpression: Item.loading(UUID()), count: 8)
@@ -52,6 +64,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
         collectionView.contentInset.top = 10
+        collectionView.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.counterclockwise"), style: .plain, target: self, action: #selector(refreshTapped))
     }
@@ -191,5 +204,21 @@ class JokesViewController: CompositionalCollectionViewViewController {
 extension JokesViewController: NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChangeContentWith snapshot: NSDiffableDataSourceSnapshotReference) {
         datasource.apply(self.snapshot(), animatingDifferences: true)
+    }
+}
+
+extension JokesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        guard let item = datasource.itemIdentifier(for: indexPath) else { return nil }
+        guard !item.isLoading else { return nil }
+        
+        let speak = UIAction(title: "Hear") {_ in
+            // text to speech
+        }
+        
+        return UIContextMenuConfiguration(identifier: nil,
+                                          previewProvider: nil) { _ in
+            UIMenu(title: "Actions", children: [speak])
+        }
     }
 }
