@@ -38,6 +38,17 @@ class JokesViewController: CompositionalCollectionViewViewController {
             }
         }
         
+        var jokeData: JokeProtocol? {
+            switch self {
+            case .loading(_):
+                return nil
+            case .favorite(let favorite):
+                return favorite
+            case .joke(let data):
+                return data
+            }
+        }
+        
         static var loadingItems: [Item] {
             return Array(repeatingExpression: Item.loading(UUID()), count: 8)
         }
@@ -49,6 +60,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupView()
         
@@ -208,12 +220,20 @@ extension JokesViewController: NSFetchedResultsControllerDelegate {
 }
 
 extension JokesViewController: UICollectionViewDelegate {
+    func speak(joke: JokeProtocol) {
+        let utterance = AVSpeechUtterance(string: "\(joke.setup)::: \(joke.punchline)")
+        
+        speechSynthesizer.speak(utterance)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         guard let item = datasource.itemIdentifier(for: indexPath) else { return nil }
         guard !item.isLoading else { return nil }
         
-        let speak = UIAction(title: "Hear") {_ in
-            // text to speech
+        let speak = UIAction(title: "Hear", image: UIImage(systemName: "ear")) {_ in
+            if let joke = item.jokeData {
+                self.speak(joke: joke)
+            }
         }
         
         return UIContextMenuConfiguration(identifier: nil,

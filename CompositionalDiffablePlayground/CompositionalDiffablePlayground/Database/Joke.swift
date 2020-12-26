@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 @objc(Joke)
-class Joke: NSManagedObject, Managed {
+class Joke: NSManagedObject, Managed, JokeProtocol {
     @NSManaged var id: Int
     @NSManaged var setup: String
     @NSManaged var punchline: String
