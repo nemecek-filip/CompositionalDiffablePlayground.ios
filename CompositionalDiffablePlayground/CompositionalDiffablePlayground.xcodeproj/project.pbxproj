@@ -47,6 +47,7 @@
 		DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */; };
 		DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0525612204002E2BD3 /* LayoutType.swift */; };
 		DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */; };
+		DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70399259885C800EF12FD /* ItemsDiffableDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		DCD979FC256120DF002E2BD3 /* LayoutTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LayoutTypeCell.xib; sourceTree = "<group>"; };
 		DCD97A0525612204002E2BD3 /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
 		DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersCollectionCell.swift; sourceTree = "<group>"; };
+		DCF70399259885C800EF12FD /* ItemsDiffableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDiffableDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				DCD979F825607701002E2BD3 /* ColoredDiffableDatasource.swift */,
+				DCF70399259885C800EF12FD /* ItemsDiffableDatasource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
+				DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
