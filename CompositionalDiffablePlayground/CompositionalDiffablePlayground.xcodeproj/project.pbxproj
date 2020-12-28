@@ -48,6 +48,9 @@
 		DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0525612204002E2BD3 /* LayoutType.swift */; };
 		DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */; };
 		DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF70399259885C800EF12FD /* ItemsDiffableDatasource.swift */; };
+		DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF703A2259A166300EF12FD /* RoundedBackgroundView.swift */; };
+		DCF703A6259A16C600EF12FD /* BackgroundDecorationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF703A5259A16C600EF12FD /* BackgroundDecorationViewController.swift */; };
+		DCF703A9259A183F00EF12FD /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF703A8259A183F00EF12FD /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		DCD97A0525612204002E2BD3 /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
 		DCD97A0925612324002E2BD3 /* RoundedCornersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersCollectionCell.swift; sourceTree = "<group>"; };
 		DCF70399259885C800EF12FD /* ItemsDiffableDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDiffableDatasource.swift; sourceTree = "<group>"; };
+		DCF703A2259A166300EF12FD /* RoundedBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBackgroundView.swift; sourceTree = "<group>"; };
+		DCF703A5259A16C600EF12FD /* BackgroundDecorationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDecorationViewController.swift; sourceTree = "<group>"; };
+		DCF703A8259A183F00EF12FD /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +212,8 @@
 				DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */,
 				DC054B372572F5FE00FED77A /* JokeCell.swift */,
 				DC054B382572F5FE00FED77A /* JokeCell.xib */,
+				DCF703A2259A166300EF12FD /* RoundedBackgroundView.swift */,
+				DCF703A8259A183F00EF12FD /* ItemCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 				DC59B00325696A6900C5E260 /* SystemListViewController.swift */,
 				DC054B342572F52C00FED77A /* JokesViewController.swift */,
 				DCC67DAF25974A2F00CA71EF /* CellRegistrationViewController.swift */,
+				DCF703A5259A16C600EF12FD /* BackgroundDecorationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +328,7 @@
 				DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */,
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
+				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
@@ -331,6 +341,7 @@
 				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
 				DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */,
 				DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
+				DCF703A6259A16C600EF12FD /* BackgroundDecorationViewController.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
 				DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */,
@@ -340,6 +351,7 @@
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,
 				DC86AC5B257144830071B7EA /* Joke.swift in Sources */,
 				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
+				DCF703A9259A183F00EF12FD /* ItemCell.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,

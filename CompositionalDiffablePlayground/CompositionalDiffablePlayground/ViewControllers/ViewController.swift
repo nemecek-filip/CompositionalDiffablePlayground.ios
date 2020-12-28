@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         .layoutType(LayoutType(name: "List Layout", color: .random(), layout: .list)),
         .layoutType(LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
         .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
+        .layoutType(LayoutType(name: "Background decoration", color: .random(), layout: .insetList)),
         .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
     ]
     
@@ -265,6 +266,8 @@ extension ViewController: UICollectionViewDelegate {
                     vc = nil
                     showLayoutNotAvailable()
                 }
+            case .insetList:
+                vc = BackgroundDecorationViewController()
             }
             
             

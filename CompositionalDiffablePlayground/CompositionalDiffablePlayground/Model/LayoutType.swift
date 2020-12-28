@@ -12,6 +12,7 @@ enum ExampleLayout {
     case simpleGrid
     case lazyGrid
     case systemList
+    case insetList
 }
 
 struct LayoutType: Hashable {

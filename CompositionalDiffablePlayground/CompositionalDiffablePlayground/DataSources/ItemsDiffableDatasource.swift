@@ -9,9 +9,9 @@ import UIKit
 
 class ItemsDiffableDataSource: UICollectionViewDiffableDataSource<Int, String> {
     init(collectionView: UICollectionView) {
-        super.init(collectionView: collectionView) { (collectionView, indexPath, color) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath)
-            
+        super.init(collectionView: collectionView) { (collectionView, indexPath, text) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
+            cell.configure(with: text)
             return cell
         }
     }
