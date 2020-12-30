@@ -1,3 +1,15 @@
+<p align="center">
+  <a href="https://github.com/nemecek-filip/DynamicType-ReferenceApp">Dynamic Type</a> &bull;
+  <a href="https://github.com/nemecek-filip/EKEventKit.Example">Event Kit</a>  &bull;
+  <a href="https://github.com/nemecek-filip/QLPreviewController.Example">Quick Look</a> 	&bull;
+  <a href="https://github.com/nemecek-filip/App-ideas">App Ideas</a> &bull;
+  <a href="https://github.com/nemecek-filip/KeyboardPreview.iOS">Keyboard Preview</a>
+  &bull;
+  <b>Modern Collection Views</b>
+</p>
+
+----
+
 # Compositional Diffable Playground
 
 My playground for trying stuff with compositional collection view layout and diffable data source.
