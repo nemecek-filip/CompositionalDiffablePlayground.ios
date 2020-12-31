@@ -18,8 +18,19 @@ extension NSCollectionLayoutSection {
         let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItem])
         layoutGroup.interItemSpacing = .fixed(10)
         
-        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        return NSCollectionLayoutSection(group: layoutGroup)
+    }
+    
+    static func largeGridSection(itemInsets: NSDirectionalEdgeInsets = .uniform(size: 5)) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = itemInsets
         
-        return layoutSection
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                               heightDimension: .fractionalWidth(0.5))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        return NSCollectionLayoutSection(group: group)
     }
 }

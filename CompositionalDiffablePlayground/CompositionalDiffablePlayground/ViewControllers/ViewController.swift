@@ -29,7 +29,8 @@ class ViewController: UIViewController {
     ]
     
     private let examples: [SectionItem] = [
-        .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()))
+        .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random())),
+        .example(ComplexExample(name: "Badges example", type: .badges, color: .random()))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -275,6 +276,8 @@ extension ViewController: UICollectionViewDelegate {
             switch example.type {
             case .jokes:
                 vc = JokesViewController()
+            case .badges:
+                vc = BadgesViewController()
             }
         default:
             vc = nil

@@ -14,5 +14,6 @@ struct ComplexExample: Hashable {
     
     enum ExampleType {
         case jokes
+        case badges
     }
 }
