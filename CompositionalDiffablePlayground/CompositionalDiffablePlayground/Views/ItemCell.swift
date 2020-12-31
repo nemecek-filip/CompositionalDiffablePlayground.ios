@@ -18,6 +18,12 @@ class ItemCell: UICollectionViewCell {
         return label
     }()
     
+    override var isHighlighted: Bool {
+        didSet {
+            contentView.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

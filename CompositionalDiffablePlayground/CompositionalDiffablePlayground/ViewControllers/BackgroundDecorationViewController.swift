@@ -20,6 +20,7 @@ class BackgroundDecorationViewController: CompositionalCollectionViewViewControl
         title = "Background decoration"
         
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
+        collectionView.contentInset.top = 10
         
         datasource = ItemsDiffableDataSource(collectionView: collectionView)
         
@@ -59,8 +60,6 @@ class BackgroundDecorationViewController: CompositionalCollectionViewViewControl
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.interSectionSpacing = 15
         layout.configuration = config
-        
-        
         
         return layout
     }
