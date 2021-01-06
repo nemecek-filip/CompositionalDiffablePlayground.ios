@@ -14,6 +14,7 @@
 		DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B3D2572F71600FED77A /* CellFromNib.swift */; };
 		DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */; };
 		DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E1442257EBD2F00777498 /* ComplexExample.swift */; };
+		DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */; };
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC4DA057259DECD500EF60A6 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA056259DECD500EF60A6 /* BadgesViewController.swift */; };
@@ -64,6 +65,7 @@
 		DC054B3D2572F71600FED77A /* CellFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromNib.swift; sourceTree = "<group>"; };
 		DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExampleViewController.swift; sourceTree = "<group>"; };
 		DC1E1442257EBD2F00777498 /* ComplexExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexExample.swift; sourceTree = "<group>"; };
+		DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedInfoView.swift; sourceTree = "<group>"; };
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC4DA056259DECD500EF60A6 /* BadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				DCF703A2259A166300EF12FD /* RoundedBackgroundView.swift */,
 				DCF703A8259A183F00EF12FD /* ItemCell.swift */,
 				DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */,
+				DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
 				DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */,
+				DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */,
 				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
