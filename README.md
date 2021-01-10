@@ -16,6 +16,8 @@ My playground for trying stuff with compositional collection view layout and dif
 
 The goal is to showcase different compositional layouts and how to achieve them. Feel free to use any code you can find and if you have interesting layout idea - open PR!
 
+**Check out my blog** for posts about [Compositional Layout](https://nemecek.be/blog/series/compositional-layout) and [Diffable Data Sources](https://nemecek.be/blog/series/diffable) or any other iOS development [topics](https://nemecek.be/blog/swift-and-ios) :-)
+
 
 ### Included examples
 
