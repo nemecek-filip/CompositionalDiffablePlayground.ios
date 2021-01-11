@@ -18,6 +18,10 @@ The goal is to showcase different compositional layouts and how to achieve them.
 
 **Check out my blog** for posts about [Compositional Layout](https://nemecek.be/blog/series/compositional-layout) and [Diffable Data Sources](https://nemecek.be/blog/series/diffable) or any other iOS development [topics](https://nemecek.be/blog/swift-and-ios) :-)
 
+For more about `NSCollectionLayoutGroup` which lets you create layouts as shown below, check out [this post](https://nemecek.be/blog/66/detailed-look-at-the-nscollectionlayoutgroup).
+
+![CL-groups-example](https://nemecek.be/media/images/groups-example.png)
+
 
 ### Included examples
 
@@ -29,7 +33,7 @@ The project currently offers these example screens.
 * **Background decoration** - this shows how to add background views to section in CL layout. For example you can use this to create layout similar to inset & grouped TableView
 * **System list** - quick example of creating list layout with the API available from iOS 14
 * **Jokes list** - this is more an example of Diffable Data Source that is used to display random jokes from an API and also favorited ones that are stored using Core Data. This also shows how to add headers to CL and loading effect. There is also context menu on the items and text-to-speech (because why not?)
-
+* **Badges example** - example showcasing adding badges to collection view cells and their positioning
 
 
 Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with issues, questions or anything else.
@@ -41,3 +45,11 @@ Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with 
 ## Lazy loaded grid - ideal for paging
 
 ![Lazy Grid](https://nemecek.be/media/images/CDPLazyGrid.gif)
+
+## Jokes list with loading indicators
+
+![Jokes Loading Shimmer](https://nemecek.be/media/images/jokesLoadingShimmer.gif)
+
+## Badges
+
+![Compositional Layout - supplementary views example](https://nemecek.be/media/images/IMG_39B7EA982A23-1.jpeg)
