@@ -13,6 +13,8 @@
 		DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC054B382572F5FE00FED77A /* JokeCell.xib */; };
 		DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B3D2572F71600FED77A /* CellFromNib.swift */; };
 		DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */; };
+		DC13860425AE3F9700BCAB5E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860325AE3F9700BCAB5E /* LetterCell.swift */; };
+		DC13860725AE403700BCAB5E /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860625AE403700BCAB5E /* WordsViewController.swift */; };
 		DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E1442257EBD2F00777498 /* ComplexExample.swift */; };
 		DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */; };
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
@@ -64,6 +66,8 @@
 		DC054B382572F5FE00FED77A /* JokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JokeCell.xib; sourceTree = "<group>"; };
 		DC054B3D2572F71600FED77A /* CellFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromNib.swift; sourceTree = "<group>"; };
 		DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExampleViewController.swift; sourceTree = "<group>"; };
+		DC13860325AE3F9700BCAB5E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
+		DC13860625AE403700BCAB5E /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		DC1E1442257EBD2F00777498 /* ComplexExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexExample.swift; sourceTree = "<group>"; };
 		DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedInfoView.swift; sourceTree = "<group>"; };
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				DCF703A8259A183F00EF12FD /* ItemCell.swift */,
 				DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */,
 				DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */,
+				DC13860325AE3F9700BCAB5E /* LetterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				DCF703A5259A16C600EF12FD /* BackgroundDecorationViewController.swift */,
 				DC4DA056259DECD500EF60A6 /* BadgesViewController.swift */,
 				DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */,
+				DC13860625AE403700BCAB5E /* WordsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
+				DC13860425AE3F9700BCAB5E /* LetterCell.swift in Sources */,
 				DCC67DB325974EFB00CA71EF /* JokeProtocol.swift in Sources */,
 				DC054B322572F46300FED77A /* SimpleNetworkHelper.swift in Sources */,
 				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
@@ -363,6 +370,7 @@
 				DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */,
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,
 				DC86AC5B257144830071B7EA /* Joke.swift in Sources */,
+				DC13860725AE403700BCAB5E /* WordsViewController.swift in Sources */,
 				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
 				DCF703A9259A183F00EF12FD /* ItemCell.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
