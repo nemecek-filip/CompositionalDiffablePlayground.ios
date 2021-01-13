@@ -12,7 +12,7 @@ class LetterCell: UICollectionViewCell {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 36, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 42, weight: .semibold)
         return label
     }()
     
@@ -26,9 +26,16 @@ class LetterCell: UICollectionViewCell {
         setupView()
     }
     
+    func configure(with letter: Character) {
+        label.text = String(letter)
+    }
     
     private func setupView() {
         contentView.addSubview(label)
+        
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        contentView.layer.cornerRadius = 2
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
