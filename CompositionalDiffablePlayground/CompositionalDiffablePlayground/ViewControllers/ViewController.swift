@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Modern Collection Views"
+        
         setupView()
         configureDatasource()
         generateData(animated: false)
