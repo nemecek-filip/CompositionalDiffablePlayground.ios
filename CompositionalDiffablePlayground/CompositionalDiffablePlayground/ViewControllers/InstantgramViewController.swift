@@ -15,10 +15,13 @@ class InstantgramViewController: UIViewController {
     
     enum Section: Hashable {
         case header
+        case highlights
+        case photos
     }
     
     enum Item: Hashable {
         case header(ProfileHeaderData)
+        case highlight(ProfileHighlight)
     }
     
     var demoProfileData: ProfileHeaderData {
@@ -49,6 +52,11 @@ class InstantgramViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileHeaderCell.reuseIdentifier, for: indexPath) as! ProfileHeaderCell
             cell.configure(with: data)
             return cell
+            
+        case .highlight(let data):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileHighlightCell.reuseIdentifier, for: indexPath) as! ProfileHighlightCell
+            cell.configure(with: data)
+            return cell
         }
     }
     
@@ -57,6 +65,9 @@ class InstantgramViewController: UIViewController {
         
         snapshot.appendSections([.header])
         snapshot.appendItems([.header(demoProfileData)], toSection: .header)
+        
+        snapshot.appendSections([.highlights])
+        snapshot.appendItems(ProfileHighlight.demoHighlights.map({ Item.highlight($0) }), toSection: .highlights)
         
         return snapshot
     }
@@ -72,8 +83,30 @@ extension InstantgramViewController {
         return NSCollectionLayoutSection(group: headerGroup)
     }
     
+    func createHighlightsSection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalWidth(0.22)))
+        item.contentInsets = .init(horizontal: 5, vertical: 0)
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .estimated(100)), subitem: item, count: 4)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 0)
+        section.orthogonalScrollingBehavior = .continuous
+        
+        return section
+    }
+    
     func sectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        return createHeaderSection()
+        let section = datasource.snapshot().sectionIdentifiers[index]
+        
+        switch section {
+        case .header:
+            return createHeaderSection()
+        case .highlights:
+            return createHighlightsSection()
+        case .photos:
+            return createHighlightsSection()
+        }
     }
     
     func createLayout() -> UICollectionViewLayout {
