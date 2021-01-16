@@ -53,6 +53,8 @@ class BackgroundDecorationViewController: CompositionalCollectionViewViewControl
             NSCollectionLayoutDecorationItem.background(elementKind: RoundedBackgroundView.reuseIdentifier)
         ]
         
+        
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         layout.register(RoundedBackgroundView.self, forDecorationViewOfKind: RoundedBackgroundView.reuseIdentifier)

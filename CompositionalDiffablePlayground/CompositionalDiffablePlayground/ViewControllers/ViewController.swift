@@ -30,7 +30,8 @@ class ViewController: UIViewController {
     
     private let examples: [SectionItem] = [
         .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random())),
-        .example(ComplexExample(name: "Badges example", type: .badges, color: .random()))
+        .example(ComplexExample(name: "Badges example", type: .badges, color: .random())),
+        .example(ComplexExample(name: "Instagram profile example", type: .instantgram, color: .random()))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -280,6 +281,8 @@ extension ViewController: UICollectionViewDelegate {
                 vc = JokesViewController()
             case .badges:
                 vc = BadgesViewController()
+            case .instantgram:
+                vc = UIStoryboard(name: "Instantgram", bundle: nil).instantiateInitialViewController()!
             }
         default:
             vc = nil
