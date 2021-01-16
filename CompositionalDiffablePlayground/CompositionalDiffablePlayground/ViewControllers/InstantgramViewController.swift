@@ -77,13 +77,11 @@ class InstantgramViewController: UIViewController {
     func snapshot() -> Snapshot {
         var snapshot = Snapshot()
         
-        snapshot.appendSections([.header])
+        snapshot.appendSections([.header, .highlights, .photos])
         snapshot.appendItems([.header(demoProfileData)], toSection: .header)
         
-        snapshot.appendSections([.highlights])
         snapshot.appendItems(ProfileHighlight.demoHighlights.map({ Item.highlight($0) }), toSection: .highlights)
         
-        snapshot.appendSections([.photos])
         snapshot.appendItems(Photo.demoPhotos.map({ Item.photo($0) }), toSection: .photos)
         
         return snapshot
