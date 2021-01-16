@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfilePhotosHeaderView" customModule="CompositionalDiffablePlayground" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5eT-Ja-6B9">
+                    <rect key="frame" x="0.0" y="67" width="375" height="1"/>
+                    <color key="backgroundColor" systemColor="separatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="sUq-jE-8Sx"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-jS-ejW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh3-Hn-mC9">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="68"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="tintColor" systemColor="systemTealColor"/>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Photos" image="photo.on.rectangle" catalog="system"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-0l-mLC">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="68"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Videos" image="play.rectangle" catalog="system"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5eT-Ja-6B9" secondAttribute="trailing" id="MO8-81-b0r"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6Wn-jS-ejW" secondAttribute="trailing" id="Xjc-z5-QRl"/>
+                <constraint firstItem="5eT-Ja-6B9" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="YbQ-NA-JcW"/>
+                <constraint firstItem="6Wn-jS-ejW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="YnE-ui-0C7"/>
+                <constraint firstItem="5eT-Ja-6B9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bfa-F5-As0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="6Wn-jS-ejW" secondAttribute="top" id="jnc-Hm-tje"/>
+                <constraint firstItem="6Wn-jS-ejW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="zP2-23-dWr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="-120.53973013493254"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
+        <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

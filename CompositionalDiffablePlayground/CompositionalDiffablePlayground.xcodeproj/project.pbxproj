@@ -22,7 +22,11 @@
 		DC30B4FF25B323CA00E5A57F /* ProfileHeaderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B4FE25B323CA00E5A57F /* ProfileHeaderData.swift */; };
 		DC30B50325B3459800E5A57F /* ProfileHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B50225B3459800E5A57F /* ProfileHighlightCell.swift */; };
 		DC30B50625B347AD00E5A57F /* ProfileHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B50525B347AD00E5A57F /* ProfileHighlight.swift */; };
-		DC30B50925B34F9C00E5A57F /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B50825B34F9C00E5A57F /* ProfileHeaderView.swift */; };
+		DC30B50925B34F9C00E5A57F /* ProfilePhotosHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B50825B34F9C00E5A57F /* ProfilePhotosHeaderView.swift */; };
+		DC30B50C25B36B9D00E5A57F /* InstantiatesFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B50B25B36B9D00E5A57F /* InstantiatesFromNib.swift */; };
+		DC30B50F25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC30B50E25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib */; };
+		DC30B51225B374ED00E5A57F /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B51125B374ED00E5A57F /* ImageViewCell.swift */; };
+		DC30B51525B375FB00E5A57F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B51425B375FB00E5A57F /* Photo.swift */; };
 		DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */; };
 		DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */; };
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
@@ -82,7 +86,11 @@
 		DC30B4FE25B323CA00E5A57F /* ProfileHeaderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderData.swift; sourceTree = "<group>"; };
 		DC30B50225B3459800E5A57F /* ProfileHighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHighlightCell.swift; sourceTree = "<group>"; };
 		DC30B50525B347AD00E5A57F /* ProfileHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHighlight.swift; sourceTree = "<group>"; };
-		DC30B50825B34F9C00E5A57F /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		DC30B50825B34F9C00E5A57F /* ProfilePhotosHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotosHeaderView.swift; sourceTree = "<group>"; };
+		DC30B50B25B36B9D00E5A57F /* InstantiatesFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiatesFromNib.swift; sourceTree = "<group>"; };
+		DC30B50E25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotosHeaderView.xib; sourceTree = "<group>"; };
+		DC30B51125B374ED00E5A57F /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		DC30B51425B375FB00E5A57F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedInfoView.swift; sourceTree = "<group>"; };
 		DC4D67BE2564609B00A90329 /* SimpleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHeaderView.swift; sourceTree = "<group>"; };
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 			children = (
 				DC054B3D2572F71600FED77A /* CellFromNib.swift */,
 				DCC67DB225974EFB00CA71EF /* JokeProtocol.swift */,
+				DC30B50B25B36B9D00E5A57F /* InstantiatesFromNib.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -153,7 +162,8 @@
 			children = (
 				DC30B4F725B3226300E5A57F /* ProfileHeaderCell.swift */,
 				DC30B50225B3459800E5A57F /* ProfileHighlightCell.swift */,
-				DC30B50825B34F9C00E5A57F /* ProfileHeaderView.swift */,
+				DC30B50825B34F9C00E5A57F /* ProfilePhotosHeaderView.swift */,
+				DC30B50E25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib */,
 			);
 			path = Instantgram;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 			children = (
 				DC30B4FE25B323CA00E5A57F /* ProfileHeaderData.swift */,
 				DC30B50525B347AD00E5A57F /* ProfileHighlight.swift */,
+				DC30B51425B375FB00E5A57F /* Photo.swift */,
 			);
 			path = Instantgram;
 			sourceTree = "<group>";
@@ -264,6 +275,7 @@
 				DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */,
 				DC46DCB725A650C200A42634 /* UpdatedInfoView.swift */,
 				DC13860325AE3F9700BCAB5E /* LetterCell.swift */,
+				DC30B51125B374ED00E5A57F /* ImageViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +380,7 @@
 				DCD979D7255F2254002E2BD3 /* LaunchScreen.storyboard in Resources */,
 				DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
+				DC30B50F25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib in Resources */,
 				DCD979D2255F2252002E2BD3 /* Main.storyboard in Resources */,
 				DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */,
 				DC30B4F425B3205700E5A57F /* Instantgram.storyboard in Resources */,
@@ -385,7 +398,7 @@
 				DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */,
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
-				DC30B50925B34F9C00E5A57F /* ProfileHeaderView.swift in Sources */,
+				DC30B50925B34F9C00E5A57F /* ProfilePhotosHeaderView.swift in Sources */,
 				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
@@ -411,12 +424,14 @@
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
 				DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */,
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,
+				DC30B51525B375FB00E5A57F /* Photo.swift in Sources */,
 				DC86AC5B257144830071B7EA /* Joke.swift in Sources */,
 				DC13860725AE403700BCAB5E /* WordsViewController.swift in Sources */,
 				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
 				DC30B4FB25B3238300E5A57F /* InstantgramViewController.swift in Sources */,
 				DCF703A9259A183F00EF12FD /* ItemCell.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
+				DC30B50C25B36B9D00E5A57F /* InstantiatesFromNib.swift in Sources */,
 				DC30B50325B3459800E5A57F /* ProfileHighlightCell.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */,
@@ -424,6 +439,7 @@
 				DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */,
 				DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */,
 				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,
+				DC30B51225B374ED00E5A57F /* ImageViewCell.swift in Sources */,
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DC4DA057259DECD500EF60A6 /* BadgesViewController.swift in Sources */,

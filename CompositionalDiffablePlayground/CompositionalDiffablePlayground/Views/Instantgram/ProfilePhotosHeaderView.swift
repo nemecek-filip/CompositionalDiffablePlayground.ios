@@ -7,6 +7,6 @@
 
 import UIKit
 
-class ProfilePhotosHeaderView: UICollectionReusableView {
+class ProfilePhotosHeaderView: UICollectionReusableView, InstantiatesFromNib {
     
 }
