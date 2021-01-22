@@ -16,6 +16,8 @@ My playground for trying stuff with compositional collection view layout and dif
 
 The goal is to showcase different compositional layouts and how to achieve them. Feel free to use any code you can find and if you have interesting layout idea - open PR!
 
+Please *don't* take these examples as the only correct way how to work with these APIs. I am still figuring them out and experimenting.
+
 **Check out my blog** for posts about [Compositional Layout](https://nemecek.be/blog/series/compositional-layout) and [Diffable Data Sources](https://nemecek.be/blog/series/diffable) or any other iOS development [topics](https://nemecek.be/blog/swift-and-ios) :-)
 
 For more about `NSCollectionLayoutGroup` which lets you create layouts as shown below, check out [this post](https://nemecek.be/blog/66/detailed-look-at-the-nscollectionlayoutgroup).
