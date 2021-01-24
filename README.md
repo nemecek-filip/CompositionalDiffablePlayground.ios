@@ -12,6 +12,9 @@
 
 # Modern Collection Views
 
+[![Twitter: @nemecek_f](https://img.shields.io/badge/contact-@nemecek_f-blue.svg?style=flat)](https://twitter.com/nemecek_f)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/nemecek-filip/CompositionalDiffablePlayground.ios/blob/main/LICENSE)
+
 My playground for trying stuff with compositional collection view layout and diffable data source.
 
 The goal is to showcase different compositional layouts and how to achieve them. Feel free to use any code you can find and if you have interesting layout idea - open PR!
