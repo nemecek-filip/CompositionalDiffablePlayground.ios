@@ -11,6 +11,7 @@ enum ExampleLayout {
     case list
     case simpleGrid
     case lazyGrid
+    case onboarding
     case systemList
     case insetList
 }

@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         .layoutType(LayoutType(name: "List Layout", color: .random(), layout: .list)),
         .layoutType(LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
         .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
+        .layoutType(LayoutType(name: "Onboarding layout", color: .random(), layout: .onboarding)),
         .layoutType(LayoutType(name: "Background decoration", color: .random(), layout: .insetList)),
         .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
     ]
@@ -261,6 +262,8 @@ extension ViewController: UICollectionViewDelegate {
                 vc = ListViewController()
             case .simpleGrid:
                 vc = SimpleGridViewController()
+            case .onboarding:
+                vc = OnboardingLayoutViewController()
             case .lazyGrid:
                 vc = LazyGridViewController()
             case .systemList:
