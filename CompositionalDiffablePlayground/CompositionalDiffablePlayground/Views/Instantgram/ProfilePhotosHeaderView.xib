@@ -30,14 +30,18 @@
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="tintColor" systemColor="systemTealColor"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Photos" image="photo.on.rectangle" catalog="system"/>
+                            <state key="normal" title="Photos" image="photo.on.rectangle" catalog="system">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-0l-mLC">
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="68"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="tintColor" systemColor="secondaryLabelColor"/>
                             <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="Videos" image="play.rectangle" catalog="system"/>
+                            <state key="normal" title="Videos" image="play.rectangle" catalog="system">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
                         </button>
                     </subviews>
                 </stackView>
@@ -60,6 +64,9 @@
     <resources>
         <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

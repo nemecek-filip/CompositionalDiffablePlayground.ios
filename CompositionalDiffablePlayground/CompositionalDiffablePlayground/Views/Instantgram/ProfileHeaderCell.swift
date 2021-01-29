@@ -15,6 +15,13 @@ class ProfileHeaderCell: UICollectionViewCell {
     
     @IBOutlet var numberOfPostsLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        avatarImageView.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        avatarImageView.layer.borderWidth = 1
+    }
+    
     func configure(with data: ProfileHeaderData) {
         nameLabel.text = data.name
         accountTypeLabel.text = data.accountType
