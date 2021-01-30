@@ -73,8 +73,8 @@ class JokesViewController: CompositionalCollectionViewViewController {
     func setupView() {
         title = "Jokes"
         
-        collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
-        collectionView.register(JokeCell.nib, forCellWithReuseIdentifier: JokeCell.reuseIdentifier)
+        collectionView.register(header: SimpleHeaderView.self)
+        collectionView.register(cellFromNib: JokeCell.self)
         collectionView.contentInset.top = 10
         collectionView.delegate = self
         

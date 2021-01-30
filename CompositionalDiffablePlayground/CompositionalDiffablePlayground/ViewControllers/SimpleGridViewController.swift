@@ -42,7 +42,7 @@ class SimpleGridViewController: CompositionalCollectionViewViewController {
 
         title = "Simple Grid example"
 
-        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
+        collectionView.register(cell: ColorCell.self)
         
         datasource = ColoredDiffableDataSource(collectionView: collectionView)
         

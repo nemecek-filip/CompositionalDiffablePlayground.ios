@@ -13,6 +13,7 @@
 		DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC054B382572F5FE00FED77A /* JokeCell.xib */; };
 		DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054B3D2572F71600FED77A /* CellFromNib.swift */; };
 		DC092D5E25C47C520031399B /* OnboardingLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC092D5D25C47C520031399B /* OnboardingLayoutViewController.swift */; };
+		DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC092D6425C572BB0031399B /* UICollectionView+Extension.swift */; };
 		DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */; };
 		DC13860425AE3F9700BCAB5E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860325AE3F9700BCAB5E /* LetterCell.swift */; };
 		DC13860725AE403700BCAB5E /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860625AE403700BCAB5E /* WordsViewController.swift */; };
@@ -78,6 +79,7 @@
 		DC054B382572F5FE00FED77A /* JokeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JokeCell.xib; sourceTree = "<group>"; };
 		DC054B3D2572F71600FED77A /* CellFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFromNib.swift; sourceTree = "<group>"; };
 		DC092D5D25C47C520031399B /* OnboardingLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLayoutViewController.swift; sourceTree = "<group>"; };
+		DC092D6425C572BB0031399B /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		DC0A6CBD25A0870A00B59501 /* GroupExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExampleViewController.swift; sourceTree = "<group>"; };
 		DC13860325AE3F9700BCAB5E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		DC13860625AE403700BCAB5E /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */,
 				DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */,
 				DC5DB885257D162E00181DCF /* Array+Extension.swift */,
+				DC092D6425C572BB0031399B /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
+				DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,

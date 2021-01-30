@@ -38,7 +38,7 @@ class WordsViewController: CompositionalCollectionViewViewController {
         title = "Modern Collection Views"
         
         collectionView.contentInset.top = 15
-        collectionView.register(LetterCell.self, forCellWithReuseIdentifier: LetterCell.reuseIdentifier)
+        collectionView.register(cell: LetterCell.self)
         
         datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
     }

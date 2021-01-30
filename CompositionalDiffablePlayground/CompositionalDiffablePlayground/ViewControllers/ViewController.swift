@@ -61,6 +61,7 @@ class ViewController: UIViewController {
         generateData(animated: true)
     }
     
+    // MARK: configureDatasource
     private func configureDatasource() {
         datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
@@ -137,6 +138,7 @@ class ViewController: UIViewController {
         datasource.apply(snapshot, animatingDifferences: animated)
     }
     
+    // MARK: Layout
     private func topSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem.withEntireSize()
         item.contentInsets = NSDirectionalEdgeInsets(horizontal: 10, vertical: 0)
@@ -247,6 +249,8 @@ class ViewController: UIViewController {
     }
 }
 
+
+// MARK: UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard 0...1 ~= indexPath.section else { return }

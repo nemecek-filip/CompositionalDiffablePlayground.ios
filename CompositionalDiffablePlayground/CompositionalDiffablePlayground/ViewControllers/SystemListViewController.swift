@@ -32,7 +32,7 @@ class SystemListViewController: CompositionalCollectionViewViewController {
 
         title = "System list example"
 
-        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
+        collectionView.register(cell: ColorCell.self)
         collectionView.contentInset.top = 10
         
         datasource = ColoredDiffableDataSource(collectionView: collectionView)

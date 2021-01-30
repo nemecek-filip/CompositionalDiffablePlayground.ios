@@ -46,7 +46,7 @@ class LazyGridViewController: CompositionalCollectionViewViewController {
             layoutGuide.bottomAnchor.constraint(equalTo: loadingIndicator.bottomAnchor, constant: 10)
         ])
         
-        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
+        collectionView.register(cell: ColorCell.self)
         collectionView.delegate = self
         collectionView.contentInset.bottom = 50
     }
