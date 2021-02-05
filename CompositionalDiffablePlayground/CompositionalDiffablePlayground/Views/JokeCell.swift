@@ -31,7 +31,7 @@ class JokeCell: UICollectionViewCell, CellFromNib {
         favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
     }
     
-    func configure(with joke: Joke) {
+    func configure(with joke: Joke.Diffable) {
         setupLabel.text = joke.setup
         punchlineLabel.text = joke.punchline
         favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)

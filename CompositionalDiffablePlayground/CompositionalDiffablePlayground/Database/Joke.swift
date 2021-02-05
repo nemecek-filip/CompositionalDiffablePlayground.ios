@@ -16,6 +16,10 @@ class Joke: NSManagedObject, Managed, JokeProtocol {
     
     @NSManaged var created: Date
     
+    var diffable: Diffable {
+        return Diffable(id: id, setup: setup, punchline: punchline)
+    }
+    
     override func awakeFromInsert() {
         super.awakeFromInsert()
         created = Date()
@@ -36,5 +40,15 @@ class Joke: NSManagedObject, Managed, JokeProtocol {
         id = jokeDto.id
         setup = jokeDto.setup
         punchline = jokeDto.punchline
+    }
+    
+    struct Diffable: Hashable, JokeProtocol {
+        let id: Int
+        let setup: String
+        let punchline: String
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
     }
 }

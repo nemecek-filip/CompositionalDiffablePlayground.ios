@@ -27,7 +27,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
     enum Item: Hashable {
         case loading(UUID)
         case joke(JokeDTO)
-        case favorite(Joke)
+        case favorite(Joke.Diffable)
         
         var isLoading: Bool {
             switch self {
@@ -105,10 +105,15 @@ class JokesViewController: CompositionalCollectionViewViewController {
         var snapshot = Snapshot()
         
         let favorites: [Joke] = fetchedResultsController.fetchedObjects ?? []
-        let favoritesSection: Section = .favoriteJokes(count: favorites.count)
-        snapshot.appendSections([favoritesSection, .jokes])
         
-        snapshot.appendItems(favorites.map({ Item.favorite($0) }), toSection: favoritesSection)
+        if !favorites.isEmpty {
+            let favoritesSection: Section = .favoriteJokes(count: favorites.count)
+            snapshot.appendSections([favoritesSection])
+            
+            snapshot.appendItems(favorites.map({ Item.favorite($0.diffable) }), toSection: favoritesSection)
+        }
+        
+        snapshot.appendSections([.jokes])
         
         if let fetched = fetchedJokes {
             snapshot.appendItems(fetched.map({ Item.joke($0)}), toSection: .jokes)
