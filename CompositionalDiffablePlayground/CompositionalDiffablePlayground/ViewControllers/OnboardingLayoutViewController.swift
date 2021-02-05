@@ -8,8 +8,10 @@
 import UIKit
 
 class OnboardingLayoutViewController: CompositionalCollectionViewViewController {
+    typealias Datasource = UICollectionViewDiffableDataSource<Int, Color>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Color>
     
-    private var datasource: ColoredDiffableDataSource!
+    private var datasource: Datasource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,8 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
     }
     
     @objc func skipTapped() {
-        // not implemented yet
+        // there is a bug in UICollectionView in iOS 14, scrollToItem does not work if the orthogonalScrollingBehavior is set to paging
+        collectionView.setContentOffset(CGPoint(x: collectionView.bounds.width * 5, y: 0), animated: true)
     }
     
     private func setupView() {
@@ -29,9 +32,22 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
         collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
         collectionView.alwaysBounceVertical = false
         
-        datasource = ColoredDiffableDataSource(collectionView: collectionView)
+        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
         
-        datasource.apply(ColorsSnapshot.random())
+        datasource.apply(snapshot(), animatingDifferences: false)
+    }
+    
+    func snapshot() -> Snapshot {
+        var snapshot = Snapshot()
+        snapshot.appendSections([0])
+        snapshot.appendItems(Array(repeatingExpression: Color(), count: 6))
+        return snapshot
+    }
+    
+    func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Color) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath)
+        cell.contentView.backgroundColor = item.color
+        return cell
     }
     
     override func createLayout() -> UICollectionViewLayout {
@@ -42,7 +58,7 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
         group.contentInsets = .init(horizontal: 15, vertical: 5)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .paging
+        section.orthogonalScrollingBehavior = .groupPagingCentered
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         

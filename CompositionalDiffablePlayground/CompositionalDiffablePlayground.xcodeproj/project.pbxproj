@@ -37,6 +37,7 @@
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
 		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
+		DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6CC30125CD8EFC001B95E4 /* Color.swift */; };
 		DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */; };
 		DC86AC5B257144830071B7EA /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5A257144830071B7EA /* Joke.swift */; };
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
@@ -103,6 +104,7 @@
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
 		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		DC6CC30125CD8EFC001B95E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		DC86AC5A257144830071B7EA /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				DC86AC63257145E60071B7EA /* DTO */,
 				DCD97A0525612204002E2BD3 /* LayoutType.swift */,
 				DC1E1442257EBD2F00777498 /* ComplexExample.swift */,
+				DC6CC30125CD8EFC001B95E4 /* Color.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,
 				DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */,
+				DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC30B4F825B3226300E5A57F /* ProfileHeaderCell.swift in Sources */,
