@@ -19,8 +19,22 @@ class JokesViewController: CompositionalCollectionViewViewController {
     
     var speechSynthesizer = AVSpeechSynthesizer()
     
+    enum SectionState {
+        case expanded
+        case collapsed
+        
+        var actionTitle: String {
+            switch self {
+            case .expanded:
+                return "Collapse"
+            case .collapsed:
+                return "Expand"
+            }
+        }
+    }
+    
     enum Section: Hashable {
-        case favoriteJokes(count: Int)
+        case favoriteJokes(count: Int, state: SectionState = .expanded)
         case jokes
     }
     
@@ -55,6 +69,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
     }
     
     private var isLoading = false
+    private var favoritesSectionState = SectionState.expanded
     
     var fetchedJokes: [JokeDTO]?
     
@@ -74,6 +89,7 @@ class JokesViewController: CompositionalCollectionViewViewController {
         title = "Jokes"
         
         collectionView.register(header: SimpleHeaderView.self)
+        collectionView.register(header: ActionButtonHeader.self)
         collectionView.register(cellFromNib: JokeCell.self)
         collectionView.contentInset.top = 10
         collectionView.delegate = self
@@ -100,6 +116,17 @@ class JokesViewController: CompositionalCollectionViewViewController {
         try! fetchedResultsController.performFetch()
     }
     
+    func toggleFavoriteSection() {
+        switch favoritesSectionState {
+        case .collapsed:
+            favoritesSectionState = .expanded
+        case .expanded:
+            favoritesSectionState = .collapsed
+        }
+        
+        datasource.apply(snapshot(), animatingDifferences: true)
+    }
+    
     // MARK: snapshot()
     func snapshot() -> Snapshot {
         var snapshot = Snapshot()
@@ -107,10 +134,12 @@ class JokesViewController: CompositionalCollectionViewViewController {
         let favorites: [Joke] = fetchedResultsController.fetchedObjects ?? []
         
         if !favorites.isEmpty {
-            let favoritesSection: Section = .favoriteJokes(count: favorites.count)
+            let favoritesSection: Section = .favoriteJokes(count: favorites.count, state: favoritesSectionState)
             snapshot.appendSections([favoritesSection])
             
-            snapshot.appendItems(favorites.map({ Item.favorite($0.diffable) }), toSection: favoritesSection)
+            if favoritesSectionState == .expanded {
+                snapshot.appendItems(favorites.map({ Item.favorite($0.diffable) }), toSection: favoritesSection)
+            }
         }
         
         snapshot.appendSections([.jokes])
@@ -168,18 +197,26 @@ class JokesViewController: CompositionalCollectionViewViewController {
     func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         guard kind == UICollectionView.elementKindSectionHeader else { return nil }
         
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
         
         let section = datasource.snapshot().sectionIdentifiers[indexPath.section]
         
         switch section {
-        case .favoriteJokes(let count):
-            header.configure(with: "Favorites (\(count))")
+        case .favoriteJokes(let count, let state):
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ActionButtonHeader.reuseIdentifier, for: indexPath) as! ActionButtonHeader
+            
+            header.configure(with: "Favorites (\(count))", buttonTitle: state.actionTitle)
+            header.buttonAction = { [weak self] in
+                self?.toggleFavoriteSection()
+            }
+            
+            return header
+            
         case .jokes:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier, for: indexPath) as! SimpleHeaderView
+            
             header.configure(with: "Random")
+            return header
         }
-        
-        return header
     }
     
     func loadJokes() {
