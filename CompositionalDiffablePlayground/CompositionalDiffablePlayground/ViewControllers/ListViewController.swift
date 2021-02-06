@@ -19,6 +19,8 @@ class ListViewController: CompositionalCollectionViewViewController {
         collectionView.register(cell: ColorCell.self)
         collectionView.contentInset.top = 10
         
+        collectionView.setCollectionViewLayout(UICollectionViewCompositionalLayout.listLayout(), animated: false)
+        
         datasource = ColoredDiffableDataSource(collectionView: collectionView)
         
         loadData()

@@ -23,4 +23,8 @@ extension UICollectionView {
     func register<T: UICollectionReusableView>(footer: T.Type) {
         register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.reuseIdentifier)
     }
+    
+    func dequeue<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+        return dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
+    }
 }

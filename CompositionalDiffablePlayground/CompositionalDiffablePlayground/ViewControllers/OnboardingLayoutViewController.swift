@@ -29,7 +29,8 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
     private func setupView() {
         title = "Onboarding example"
 
-        collectionView.register(ColorCell.self, forCellWithReuseIdentifier: ColorCell.reuseIdentifier)
+        collectionView.register(cell: ColorCell.self)
+        collectionView.register(header: SimpleHeaderView.self)
         collectionView.alwaysBounceVertical = false
         
         datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
@@ -45,7 +46,10 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
     }
     
     func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Color) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath)
+        //let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath) as! ColorCell
+        
+        let cell: ColorCell = collectionView.dequeue(for: indexPath)
+        
         cell.contentView.backgroundColor = item.color
         return cell
     }
