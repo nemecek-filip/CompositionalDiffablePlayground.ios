@@ -40,6 +40,7 @@ The project currently offers these example screens.
 * **Jokes list** - this is more an example of Diffable Data Source that is used to display random jokes from an API and also favorited ones that are stored using Core Data. This also shows how to add headers to CL and loading effect. There is also context menu on the items and text-to-speech (because why not?)
 * **Badges example** - example showcasing adding badges to collection view cells and their positioning
 * **Instagram profile screen** - this practical example shows how to build screen similar to Instagram profile with Compositional Layout and Diffable. You can read more on my [blog](https://nemecek.be/blog/72/building-instagram-profile-screen-with-compositional-layout)
+* **Onboarding flow** - simple example showcasing creating onboarding with Compositional Layout
 
 
 Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with issues, questions or anything else.
@@ -59,3 +60,7 @@ Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with 
 ## Badges
 
 ![Compositional Layout - supplementary views example](https://nemecek.be/media/images/IMG_39B7EA982A23-1.jpeg)
+
+## Onboarding
+
+![Compositional Layout - onboarding example](https://nemecek.be/media/images/compositionalLayoutOnboarding.gif)
