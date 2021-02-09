@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
         .layoutType(LayoutType(name: "Onboarding layout", color: .random(), layout: .onboarding)),
         .layoutType(LayoutType(name: "Background decoration", color: .random(), layout: .insetList)),
+        .layoutType(LayoutType(name: "Sticky headers", color: .random(), layout: .stickyHeaders)),
         .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
     ]
     
@@ -123,14 +124,7 @@ class ViewController: UIViewController {
         snapshot.appendItems(examples, toSection: sections[1])
         
         for section in sections.suffix(from: 2) {
-            var items = [SectionItem]()
-            
-            for _ in 4...Int.random(in: 5...9) {
-                items.append(.color(.random()))
-            }
-            
-            // Probably not a good use of a map
-            //let items2: [UIColor] = (4...Int.random(in: 7...12)).map({ _ in UIColor.random() })
+            let items = Array.init(repeatingExpression: SectionItem.color(.random()), count: Int.random(in: 4...9))
             
             snapshot.appendItems(items, toSection: section)
         }
@@ -279,6 +273,8 @@ extension ViewController: UICollectionViewDelegate {
                 }
             case .insetList:
                 vc = BackgroundDecorationViewController()
+            case .stickyHeaders:
+                vc = StickyHeadersViewController()
             }
             
             

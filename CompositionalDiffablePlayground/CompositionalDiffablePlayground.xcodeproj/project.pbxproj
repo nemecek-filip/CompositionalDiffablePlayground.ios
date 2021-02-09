@@ -34,6 +34,8 @@
 		DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D685C2565A52300A90329 /* LazyGridViewController.swift */; };
 		DC4DA057259DECD500EF60A6 /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA056259DECD500EF60A6 /* BadgesViewController.swift */; };
 		DC4DA05A259DEFDF00EF60A6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */; };
+		DC5410FB25D282140023DA2E /* StickyHeadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */; };
+		DC5410FE25D282A00023DA2E /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
 		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
@@ -102,6 +104,8 @@
 		DC4D685C2565A52300A90329 /* LazyGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridViewController.swift; sourceTree = "<group>"; };
 		DC4DA056259DECD500EF60A6 /* BadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadersViewController.swift; sourceTree = "<group>"; };
+		DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
 		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				DC13860325AE3F9700BCAB5E /* LetterCell.swift */,
 				DC30B51125B374ED00E5A57F /* ImageViewCell.swift */,
 				DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */,
+				DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				DC13860625AE403700BCAB5E /* WordsViewController.swift */,
 				DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */,
 				DC092D5D25C47C520031399B /* OnboardingLayoutViewController.swift */,
+				DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -446,12 +452,14 @@
 				DC4D685D2565A52300A90329 /* LazyGridViewController.swift in Sources */,
 				DC30B4FB25B3238300E5A57F /* InstantgramViewController.swift in Sources */,
 				DCF703A9259A183F00EF12FD /* ItemCell.swift in Sources */,
+				DC5410FE25D282A00023DA2E /* StickyHeaderView.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DC30B50C25B36B9D00E5A57F /* InstantiatesFromNib.swift in Sources */,
 				DC30B50325B3459800E5A57F /* ProfileHighlightCell.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
+				DC5410FB25D282140023DA2E /* StickyHeadersViewController.swift in Sources */,
 				DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */,
 				DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */,
 				DCD979F52560527A002E2BD3 /* NSCollectionLayoutSection+Extension.swift in Sources */,

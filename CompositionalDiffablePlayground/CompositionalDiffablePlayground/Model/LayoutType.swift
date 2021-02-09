@@ -14,6 +14,7 @@ enum ExampleLayout {
     case onboarding
     case systemList
     case insetList
+    case stickyHeaders
 }
 
 struct LayoutType: Hashable {

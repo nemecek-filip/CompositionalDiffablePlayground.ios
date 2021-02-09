@@ -22,6 +22,10 @@ class BackgroundDecorationViewController: CompositionalCollectionViewViewControl
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.reuseIdentifier)
         collectionView.contentInset.top = 10
         
+        configureDatasource()
+    }
+    
+    func configureDatasource() {
         datasource = ItemsDiffableDataSource(collectionView: collectionView)
         
         datasource.apply(snapshot(), animatingDifferences: false)
@@ -52,8 +56,6 @@ class BackgroundDecorationViewController: CompositionalCollectionViewViewControl
         section.decorationItems = [
             NSCollectionLayoutDecorationItem.background(elementKind: RoundedBackgroundView.reuseIdentifier)
         ]
-        
-        
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         
