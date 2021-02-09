@@ -24,6 +24,34 @@ class StickyHeadersViewController: BackgroundDecorationViewController {
         datasource.apply(snapshot(), animatingDifferences: false)
     }
     
+    override func snapshot() -> Snapshot {
+        var snapshot = Snapshot()
+        snapshot.appendSections([1, 2, 3, 4])
+        
+        var count = 1
+        for _ in 1...7 {
+            snapshot.appendItems(["Item #\(count)"], toSection: 1)
+            count += 1
+        }
+        
+        count = 1
+        for _ in 1...6 {
+            snapshot.appendItems(["Item no.\(count)"], toSection: 2)
+            count += 1
+        }
+        
+        for _ in 1...6 {
+            snapshot.appendItems(["Item n.\(count)"], toSection: 3)
+            count += 1
+        }
+        
+        for _ in 1...6 {
+            snapshot.appendItems(["#\(count) Item"], toSection: 4)
+            count += 1
+        }
+        
+        return snapshot
+    }
     
     func supplementary(collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? {
         
