@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         .layoutType(LayoutType(name: "Onboarding layout", color: .random(), layout: .onboarding)),
         .layoutType(LayoutType(name: "Background decoration", color: .random(), layout: .insetList)),
         .layoutType(LayoutType(name: "Sticky headers", color: .random(), layout: .stickyHeaders)),
-        .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList))
+        .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList)),
+        .layoutType(LayoutType(name: "Responsive layout", color: .random(), layout: .responsiveLayout)),
     ]
     
     private let examples: [SectionItem] = [
@@ -284,6 +285,8 @@ extension ViewController: UICollectionViewDelegate {
                 vc = BackgroundDecorationViewController()
             case .stickyHeaders:
                 vc = StickyHeadersViewController()
+            case .responsiveLayout:
+                vc = ResponsiveLayoutViewController()
             }
             
             

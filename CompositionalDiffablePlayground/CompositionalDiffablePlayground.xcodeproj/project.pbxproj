@@ -37,6 +37,7 @@
 		DC5410FB25D282140023DA2E /* StickyHeadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */; };
 		DC5410FE25D282A00023DA2E /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */; };
 		DC54111A25D4604E0023DA2E /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */; };
+		DC54111D25D463200023DA2E /* ResponsiveLayoutExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
 		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
@@ -108,6 +109,7 @@
 		DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadersViewController.swift; sourceTree = "<group>"; };
 		DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
 		DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveLayoutExample.swift; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
 		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */,
 				DC092D5D25C47C520031399B /* OnboardingLayoutViewController.swift */,
 				DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */,
+				DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DC30B50925B34F9C00E5A57F /* ProfilePhotosHeaderView.swift in Sources */,
 				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
+				DC54111D25D463200023DA2E /* ResponsiveLayoutExample.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */,
