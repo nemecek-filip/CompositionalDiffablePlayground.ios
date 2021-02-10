@@ -36,6 +36,7 @@
 		DC4DA05A259DEFDF00EF60A6 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */; };
 		DC5410FB25D282140023DA2E /* StickyHeadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */; };
 		DC5410FE25D282A00023DA2E /* StickyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */; };
+		DC54111A25D4604E0023DA2E /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */; };
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
 		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
@@ -106,6 +107,7 @@
 		DC4DA059259DEFDF00EF60A6 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadersViewController.swift; sourceTree = "<group>"; };
 		DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderView.swift; sourceTree = "<group>"; };
+		DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
 		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */,
 				DC5DB885257D162E00181DCF /* Array+Extension.swift */,
 				DC092D6425C572BB0031399B /* UICollectionView+Extension.swift */,
+				DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */,
 				DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */,
 				DC092D5E25C47C520031399B /* OnboardingLayoutViewController.swift in Sources */,
+				DC54111A25D4604E0023DA2E /* UIDevice+Extension.swift in Sources */,
 				DCD97A0A25612324002E2BD3 /* RoundedCornersCollectionCell.swift in Sources */,
 				DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */,
 				DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */,

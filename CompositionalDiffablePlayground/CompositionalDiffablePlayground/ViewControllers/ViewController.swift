@@ -134,16 +134,23 @@ class ViewController: UIViewController {
     
     // MARK: Layout
     private func topSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem.withEntireSize()
+        let item: NSCollectionLayoutItem
+        
+        if UIDevice.current.isIpad {
+            item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0)))
+        } else {
+            item = NSCollectionLayoutItem.withEntireSize()
+        }
+        
         item.contentInsets = NSDirectionalEdgeInsets(horizontal: 10, vertical: 0)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalHeight(0.32))
+                                               heightDimension: .fractionalHeight(UIDevice.current.isIpad ? 0.2 : 0.32))
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .groupPagingCentered
+        section.orthogonalScrollingBehavior = UIDevice.current.isIpad ? .continuous : .groupPagingCentered
         
         addStandardHeader(toSection: section)
         
@@ -206,8 +213,10 @@ class ViewController: UIViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets.uniform(size: 10)
         
+        let heightDimension: NSCollectionLayoutDimension = UIDevice.current.isIpad ? .fractionalHeight(0.2) : .fractionalWidth(0.5)
+        
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .fractionalWidth(0.5))
+                                               heightDimension: heightDimension)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)

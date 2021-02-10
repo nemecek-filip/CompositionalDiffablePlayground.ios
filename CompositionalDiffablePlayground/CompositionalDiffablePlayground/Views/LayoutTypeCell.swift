@@ -14,6 +14,10 @@ class LayoutTypeCell: RoundedCornersCollectionCell, CellFromNib {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        if UIDevice.current.isIpad {
+            titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        }
     }
     
     override var isHighlighted: Bool {
