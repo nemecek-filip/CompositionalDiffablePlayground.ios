@@ -32,15 +32,23 @@ For more about `NSCollectionLayoutGroup` which lets you create layouts as shown 
 
 The project currently offers these example screens.
 
+#### Layout examples
+
 * **List layout** - list created with Compositional Layout (CL) for iOS 13+
 * **Simple grid** - grid layout with option to change sizing and see it animate the change (see GIF below)
 * **Lazy grid example** - this grid starts with 12 items and when you scroll at the end it "loads" more (see GIF below)
-* **Background decoration** - this shows how to add background views to section in CL layout. For example you can use this to create layout similar to inset & grouped TableView
+* **Background decoration** - this shows how to add background views to section in CL layout. For example you can use this to create layout similar to inset & grouped TableView [[article](https://nemecek.be/blog/71/using-background-decoration-views-with-compositional-layout)]
 * **System list** - quick example of creating list layout with the API available from iOS 14
+* **Onboarding flow** - simple example showcasing creating onboarding with Compositional Layout [[article](https://nemecek.be/blog/81/how-to-create-onboarding-with-compositional-layout)]
+* **Sticky headers** - example showing how to configure headers to be pinned or sticky. Similarly what UITableView offers [[article](https://nemecek.be/blog/83/how-to-create-sticky-headers-with-compositional-layout)]
+
+
+#### More complete examples
+
 * **Jokes list** - this is more an example of Diffable Data Source that is used to display random jokes from an API and also favorited ones that are stored using Core Data. This also shows how to add headers to CL and loading effect. There is also context menu on the items and text-to-speech (because why not?)
-* **Badges example** - example showcasing adding badges to collection view cells and their positioning
+* **Badges example** - example showcasing adding badges to collection view cells and their positioning [[article](https://nemecek.be/blog/69/supplementary-views-with-compositional-layout-and-diffable-data-source)]
 * **Instagram profile screen** - this practical example shows how to build screen similar to Instagram profile with Compositional Layout and Diffable. You can read more on my [blog](https://nemecek.be/blog/72/building-instagram-profile-screen-with-compositional-layout)
-* **Onboarding flow** - simple example showcasing creating onboarding with Compositional Layout
+
 
 
 Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with issues, questions or anything else.
@@ -64,3 +72,7 @@ Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with 
 ## Onboarding
 
 ![Compositional Layout - onboarding example](https://nemecek.be/media/images/compositionalLayoutOnboarding.gif)
+
+## Sticky headers
+
+![Compositional Layout - Sticky headers](https://nemecek.be/media/images/compositionalLayoutStickyHeaders.gif)
