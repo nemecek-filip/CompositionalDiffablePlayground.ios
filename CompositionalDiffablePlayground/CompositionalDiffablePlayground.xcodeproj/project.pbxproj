@@ -41,6 +41,7 @@
 		DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */; };
 		DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59B00325696A6900C5E260 /* SystemListViewController.swift */; };
 		DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5DB885257D162E00181DCF /* Array+Extension.swift */; };
+		DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6474E625D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift */; };
 		DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6CC30125CD8EFC001B95E4 /* Color.swift */; };
 		DC6CC30725CDBAF6001B95E4 /* ActionButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */; };
 		DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */; };
@@ -113,6 +114,7 @@
 		DC59B000256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCompositionalLayout+Extension.swift"; sourceTree = "<group>"; };
 		DC59B00325696A6900C5E260 /* SystemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemListViewController.swift; sourceTree = "<group>"; };
 		DC5DB885257D162E00181DCF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		DC6474E625D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutDimension+Extension.swift"; sourceTree = "<group>"; };
 		DC6CC30125CD8EFC001B95E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonHeader.swift; sourceTree = "<group>"; };
 		DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				DC5DB885257D162E00181DCF /* Array+Extension.swift */,
 				DC092D6425C572BB0031399B /* UICollectionView+Extension.swift */,
 				DC54111925D4604E0023DA2E /* UIDevice+Extension.swift */,
+				DC6474E625D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				DCD979F2256051C0002E2BD3 /* ListViewController.swift in Sources */,
 				DCD979FD256120DF002E2BD3 /* LayoutTypeCell.swift in Sources */,
 				DC4DA057259DECD500EF60A6 /* BadgesViewController.swift in Sources */,
+				DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,

@@ -41,6 +41,7 @@ The project currently offers these example screens.
 * **System list** - quick example of creating list layout with the API available from iOS 14
 * **Onboarding flow** - simple example showcasing creating onboarding with Compositional Layout [[article](https://nemecek.be/blog/81/how-to-create-onboarding-with-compositional-layout)]
 * **Sticky headers** - example showing how to configure headers to be pinned or sticky. Similarly what UITableView offers [[article](https://nemecek.be/blog/83/how-to-create-sticky-headers-with-compositional-layout)]
+* **Responsive layout** - example how to create responsive layout such that the items will retain approximately the same size across various devices [[article](https://nemecek.be/blog/84/how-to-create-responsive-compositional-layout)]
 
 
 #### More complete examples
