@@ -54,6 +54,14 @@ The project currently offers these example screens.
 
 Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with issues, questions or anything else.
 
+## Apple Photos inspired layout with animations
+
+![Compositional Layout - Photos](https://nemecek.be/media/images/photosLayout.gif)
+
+## Instagram profile
+
+![Instantgram comparisson](https://nemecek.be/media/images/instantgramComparisson.png)
+
 ## Resizable grid
 
 ![Resizable Grid Example](https://nemecek.be/media/images/CDPResizableGrid.gif)
