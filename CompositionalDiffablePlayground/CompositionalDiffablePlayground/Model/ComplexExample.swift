@@ -16,5 +16,6 @@ struct ComplexExample: Hashable {
         case jokes
         case badges
         case instantgram
+        case photos
     }
 }

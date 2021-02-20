@@ -32,9 +32,10 @@ class ViewController: UIViewController {
     ]
     
     private let examples: [SectionItem] = [
+        .example(ComplexExample(name: "Instagram profile example", type: .instantgram, color: .random())),
+        .example(ComplexExample(name: "Photos with layout switch", type: .photos, color: .random())),
         .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random())),
         .example(ComplexExample(name: "Badges example", type: .badges, color: .random())),
-        .example(ComplexExample(name: "Instagram profile example", type: .instantgram, color: .random()))
     ]
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
@@ -294,6 +295,8 @@ extension ViewController: UICollectionViewDelegate {
             switch example.type {
             case .jokes:
                 vc = JokesViewController()
+            case .photos:
+                vc = PhotosViewController()
             case .badges:
                 vc = BadgesViewController()
             case .instantgram:

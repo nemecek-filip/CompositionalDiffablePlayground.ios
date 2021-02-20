@@ -49,6 +49,10 @@
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
 		DC86AC61257145290071B7EA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC60257145290071B7EA /* Database.swift */; };
 		DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC64257145EC0071B7EA /* JokeDTO.swift */; };
+		DCAB988F25E12E6F003AF6CD /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */; };
+		DCAB989325E14A39003AF6CD /* PhotoSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */; };
+		DCAB989425E14A39003AF6CD /* PhotoSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */; };
+		DCAB989725E14E21003AF6CD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB989625E14E20003AF6CD /* GradientView.swift */; };
 		DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */; };
 		DCBE4846256126A200341818 /* SimpleGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4845256126A200341818 /* SimpleGridViewController.swift */; };
 		DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */; };
@@ -122,6 +126,10 @@
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		DC86AC60257145290071B7EA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		DC86AC64257145EC0071B7EA /* JokeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDTO.swift; sourceTree = "<group>"; };
+		DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSummaryCell.swift; sourceTree = "<group>"; };
+		DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoSummaryCell.xib; sourceTree = "<group>"; };
+		DCAB989625E14E20003AF6CD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DCBE48422561253A00341818 /* ColorsSnapshot+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsSnapshot+Extension.swift"; sourceTree = "<group>"; };
 		DCBE4845256126A200341818 /* SimpleGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGridViewController.swift; sourceTree = "<group>"; };
 		DCBE4848256126D000341818 /* CompositionalCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +307,9 @@
 				DC30B51125B374ED00E5A57F /* ImageViewCell.swift */,
 				DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */,
 				DC5410FD25D282A00023DA2E /* StickyHeaderView.swift */,
+				DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */,
+				DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */,
+				DCAB989625E14E20003AF6CD /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 				DC092D5D25C47C520031399B /* OnboardingLayoutViewController.swift */,
 				DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */,
 				DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */,
+				DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +421,7 @@
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
 				DC30B50F25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib in Resources */,
 				DCD979D2255F2252002E2BD3 /* Main.storyboard in Resources */,
+				DCAB989425E14A39003AF6CD /* PhotoSummaryCell.xib in Resources */,
 				DCD979FE256120DF002E2BD3 /* LayoutTypeCell.xib in Resources */,
 				DC30B4F425B3205700E5A57F /* Instantgram.storyboard in Resources */,
 			);
@@ -435,6 +448,7 @@
 				DCF7039A259885C800EF12FD /* ItemsDiffableDatasource.swift in Sources */,
 				DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
+				DCAB989325E14A39003AF6CD /* PhotoSummaryCell.swift in Sources */,
 				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC30B4F825B3226300E5A57F /* ProfileHeaderCell.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
@@ -466,10 +480,12 @@
 				DC5410FE25D282A00023DA2E /* StickyHeaderView.swift in Sources */,
 				DCD979F925607701002E2BD3 /* ColoredDiffableDatasource.swift in Sources */,
 				DC30B50C25B36B9D00E5A57F /* InstantiatesFromNib.swift in Sources */,
+				DCAB989725E14E21003AF6CD /* GradientView.swift in Sources */,
 				DC30B50325B3459800E5A57F /* ProfileHighlightCell.swift in Sources */,
 				DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */,
 				DC0A6CBE25A0870A00B59501 /* GroupExampleViewController.swift in Sources */,
 				DCD979E7255F2B7B002E2BD3 /* UIColor+Extension.swift in Sources */,
+				DCAB988F25E12E6F003AF6CD /* PhotosViewController.swift in Sources */,
 				DC5410FB25D282140023DA2E /* StickyHeadersViewController.swift in Sources */,
 				DC5DB886257D162E00181DCF /* Array+Extension.swift in Sources */,
 				DC46DCB825A650C200A42634 /* UpdatedInfoView.swift in Sources */,
