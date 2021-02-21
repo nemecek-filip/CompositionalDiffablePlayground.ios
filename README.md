@@ -56,7 +56,7 @@ Free free to reach out over at [@nemecek_f](https://twitter.com/nemecek_f) with 
 
 ## Apple Photos inspired layout with animations
 
-![Compositional Layout - Photos](https://nemecek.be/media/images/photosLayout.gif)
+![Compositional Layout - Photos](https://nemecek.be/media/images/photosLayout_ev7HGVV.gif)
 
 ## Instagram profile
 
