@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ArticleCell" customModule="CompositionalDiffablePlayground" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdl-qd-ysr">
+                        <rect key="frame" x="0.0" y="0.0" width="295" height="253"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding Services to Grocery for Mac with Catalyst and AppKit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="a34-Qe-pCb">
+                                <rect key="frame" x="16" y="16" width="263" height="221"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a34-Qe-pCb" firstAttribute="top" secondItem="wdl-qd-ysr" secondAttribute="top" constant="16" id="Khb-xV-cqv"/>
+                            <constraint firstAttribute="trailing" secondItem="a34-Qe-pCb" secondAttribute="trailing" constant="16" id="XAZ-Rk-bRR"/>
+                            <constraint firstAttribute="bottom" secondItem="a34-Qe-pCb" secondAttribute="bottom" constant="16" id="ZuG-bo-L68"/>
+                            <constraint firstItem="a34-Qe-pCb" firstAttribute="leading" secondItem="wdl-qd-ysr" secondAttribute="leading" constant="16" id="cFR-4J-AEg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="wdl-qd-ysr" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="7HN-P0-4nV"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wdl-qd-ysr" secondAttribute="trailing" id="IDZ-Bp-UwI"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="wdl-qd-ysr" secondAttribute="bottom" id="h1E-3U-nZI"/>
+                <constraint firstItem="wdl-qd-ysr" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="hBT-Uj-Uaa"/>
+            </constraints>
+            <size key="customSize" width="295" height="253"/>
+            <connections>
+                <outlet property="titleLabel" destination="a34-Qe-pCb" id="DFh-OJ-eta"/>
+            </connections>
+            <point key="canvasLocation" x="333.60000000000002" y="245.12743628185908"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

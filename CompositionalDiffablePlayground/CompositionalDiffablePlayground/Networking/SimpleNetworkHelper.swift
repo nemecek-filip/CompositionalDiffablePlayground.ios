@@ -27,12 +27,22 @@ class SimpleNetworkHelper {
             
             let decoder = JSONDecoder()
             
-            completion(try? decoder.decode(T.self, from: data))
+            do {
+                let decoded = try decoder.decode(T.self, from: data)
+                completion(decoded)
+            } catch {
+                completion(nil)
+                print(error)
+            }
             
         }.resume()
     }
     
     func getJokes(completion: @escaping ([JokeDTO]?) -> ()) {
         self.get(fromUrl: URL(string: "https://official-joke-api.appspot.com/jokes/ten")!, completion: completion)
+    }
+    
+    func getArticles(completion: @escaping ([ArticleDTO]?) -> ()) {
+        self.get(fromUrl: URL(string: "https://iosfeeds.com/api/articles/")!, completion: completion)
     }
 }

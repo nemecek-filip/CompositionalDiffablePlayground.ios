@@ -60,6 +60,10 @@
 		DCC67DB325974EFB00CA71EF /* JokeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC67DB225974EFB00CA71EF /* JokeProtocol.swift */; };
 		DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */; };
 		DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */; };
+		DCD5C41225E97D6400F09573 /* FeedsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5C41125E97D6400F09573 /* FeedsService.swift */; };
+		DCD5C41525E97D8900F09573 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5C41425E97D8900F09573 /* ArticleDTO.swift */; };
+		DCD5C41925E97F8E00F09573 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD5C41725E97F8E00F09573 /* ArticleCell.swift */; };
+		DCD5C41A25E97F8E00F09573 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD5C41825E97F8E00F09573 /* ArticleCell.xib */; };
 		DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CA255F2252002E2BD3 /* AppDelegate.swift */; };
 		DCD979CD255F2252002E2BD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */; };
 		DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD979CE255F2252002E2BD3 /* ViewController.swift */; };
@@ -137,6 +141,10 @@
 		DCC67DB225974EFB00CA71EF /* JokeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeProtocol.swift; sourceTree = "<group>"; };
 		DCD0DABD256A66D6003BA138 /* SimpleFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFooterView.swift; sourceTree = "<group>"; };
 		DCD0DAC0256A671C003BA138 /* UICollectionReusableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Extension.swift"; sourceTree = "<group>"; };
+		DCD5C41125E97D6400F09573 /* FeedsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsService.swift; sourceTree = "<group>"; };
+		DCD5C41425E97D8900F09573 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
+		DCD5C41725E97F8E00F09573 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		DCD5C41825E97F8E00F09573 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		DCD979C7255F2252002E2BD3 /* CompositionalDiffablePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompositionalDiffablePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD979CA255F2252002E2BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCD979CC255F2252002E2BD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				DC86AC64257145EC0071B7EA /* JokeDTO.swift */,
+				DCD5C41425E97D8900F09573 /* ArticleDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				DC054B312572F46300FED77A /* SimpleNetworkHelper.swift */,
+				DCD5C41125E97D6400F09573 /* FeedsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -310,6 +320,8 @@
 				DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */,
 				DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */,
 				DCAB989625E14E20003AF6CD /* GradientView.swift */,
+				DCD5C41725E97F8E00F09573 /* ArticleCell.swift */,
+				DCD5C41825E97F8E00F09573 /* ArticleCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD979D7255F2254002E2BD3 /* LaunchScreen.storyboard in Resources */,
+				DCD5C41A25E97F8E00F09573 /* ArticleCell.xib in Resources */,
 				DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
 				DC30B50F25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib in Resources */,
@@ -434,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD5C41225E97D6400F09573 /* FeedsService.swift in Sources */,
 				DC30B50625B347AD00E5A57F /* ProfileHighlight.swift in Sources */,
 				DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */,
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
@@ -441,6 +455,7 @@
 				DC30B50925B34F9C00E5A57F /* ProfilePhotosHeaderView.swift in Sources */,
 				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
 				DC54111D25D463200023DA2E /* ResponsiveLayoutExample.swift in Sources */,
+				DCD5C41925E97F8E00F09573 /* ArticleCell.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */,
@@ -499,6 +514,7 @@
 				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,
 				DC054B352572F52C00FED77A /* JokesViewController.swift in Sources */,
+				DCD5C41525E97D8900F09573 /* ArticleDTO.swift in Sources */,
 				DCD0DABE256A66D6003BA138 /* SimpleFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import SafariServices
 
 typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
 
@@ -14,10 +16,13 @@ class ViewController: UIViewController {
     
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, SectionItem>
     
+    private var cancellables = Set<AnyCancellable>()
+    
     enum SectionItem: Hashable {
         case layoutType(LayoutType)
         case color(UIColor)
         case example(ComplexExample)
+        case article(ArticleDTO)
     }
     
     private let layoutTypes: [SectionItem] = [
@@ -40,6 +45,8 @@ class ViewController: UIViewController {
     
     var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
     
+    private var articles: [ArticleDTO]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,10 +55,15 @@ class ViewController: UIViewController {
         setupView()
         configureDatasource()
         generateData(animated: false)
+        
+        setupNotifications()
+        
+        FeedsService.shared.loadArticles()
     }
     
     private func setupView() {
         collectionView.register(LayoutTypeCell.nib, forCellWithReuseIdentifier: LayoutTypeCell.reuseIdentifier)
+        collectionView.register(cellFromNib: ArticleCell.self)
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         collectionView.register(SimpleFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
@@ -64,6 +76,15 @@ class ViewController: UIViewController {
         generateData(animated: true)
     }
     
+    private func setupNotifications() {
+        FeedsService.shared.$articles
+            .sink { [weak self] (articles) in
+                self?.articles = articles
+                self?.generateData(animated: true)
+            }
+            .store(in: &cancellables)
+    }
+    
     // MARK: configureDatasource
     private func configureDatasource() {
         datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
@@ -73,6 +94,11 @@ class ViewController: UIViewController {
                 
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath)
                 cell.contentView.backgroundColor = color
+                return cell
+                
+            case .article(let data):
+                let cell: ArticleCell = collectionView.dequeue(for: indexPath)
+                cell.configure(with: data)
                 return cell
                 
             case .layoutType(let layout):
@@ -103,6 +129,8 @@ class ViewController: UIViewController {
                 header.configure(with: "Example layouts")
             } else if indexPath.section == 1 {
                 header.configure(with: "More complex examples")
+            } else if indexPath.section == 2 {
+                header.configure(with: "iOS News")
             } else {
                 header.configure(with: "Responsive section items")
             }
@@ -125,7 +153,12 @@ class ViewController: UIViewController {
         snapshot.appendItems(layoutTypes, toSection: sections.first)
         snapshot.appendItems(examples, toSection: sections[1])
         
-        for section in sections.suffix(from: 2) {
+        if let articles = articles {
+            let shuffled = articles.shuffled()
+            snapshot.appendItems(shuffled.prefix(8).map(SectionItem.article), toSection: 2)
+        }
+        
+        for section in sections.suffix(from: 3) {
             let items = Array.init(repeatingExpression: SectionItem.color(.random()), count: Int.random(in: 4...9))
             
             snapshot.appendItems(items, toSection: section)
@@ -209,8 +242,8 @@ class ViewController: UIViewController {
         return fractionalWidthToFillSpace
     }
     
-    private func mediumSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33),
+    private func mediumSection(addHeader: Bool = false) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets.uniform(size: 10)
@@ -223,6 +256,10 @@ class ViewController: UIViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         
+        if addHeader {
+            addStandardHeader(toSection: section)
+        }
+        
         return section
     }
     
@@ -231,7 +268,7 @@ class ViewController: UIViewController {
             if 0...1 ~= sectionIndex {
                 return self.topSection()
             } else if 2...3 ~= sectionIndex {
-                return self.mediumSection()
+                return self.mediumSection(addHeader: sectionIndex == 2)
             } else {
                 let snapshot = self.datasource.snapshot()
                 let itemCount = snapshot.numberOfItems(inSection: sectionIndex)
@@ -252,13 +289,18 @@ class ViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(ac, animated: true, completion: nil)
     }
+    
+    private func openWebviewFor(article: ArticleDTO) {
+        let svc = SFSafariViewController(url: URL(string: article.url)!)
+        present(svc, animated: true, completion: nil)
+    }
 }
 
 
 // MARK: UICollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard 0...1 ~= indexPath.section else { return }
+        guard 0...2 ~= indexPath.section else { return }
         guard let item = datasource.itemIdentifier(for: indexPath) else { return }
         
         let vc: UIViewController?
@@ -302,6 +344,10 @@ extension ViewController: UICollectionViewDelegate {
             case .instantgram:
                 vc = UIStoryboard(name: "Instantgram", bundle: nil).instantiateInitialViewController()!
             }
+            
+        case .article(let data):
+            openWebviewFor(article: data)
+            vc = nil
         default:
             vc = nil
         }
