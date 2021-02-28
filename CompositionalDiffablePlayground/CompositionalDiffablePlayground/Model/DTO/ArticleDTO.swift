@@ -11,6 +11,7 @@ struct ArticleDTO: Decodable {
     let title: String
     let guid: String
     let url: String
+    let site_name: String
 }
 
 extension ArticleDTO: Hashable, Equatable {

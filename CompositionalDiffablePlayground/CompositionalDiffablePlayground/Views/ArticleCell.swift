@@ -9,6 +9,7 @@ import UIKit
 
 class ArticleCell: UICollectionViewCell, CellFromNib {
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var siteLabel: UILabel!
     
     override var isHighlighted: Bool {
         didSet {
@@ -24,6 +25,7 @@ class ArticleCell: UICollectionViewCell, CellFromNib {
     
     func configure(with article: ArticleDTO) {
         titleLabel.text = article.title
+        siteLabel.text = article.site_name
     }
 
 }
