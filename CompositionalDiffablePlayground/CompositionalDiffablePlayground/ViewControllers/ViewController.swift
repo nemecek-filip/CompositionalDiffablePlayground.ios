@@ -14,6 +14,7 @@ typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
 class ViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
+    typealias Datasource = UICollectionViewDiffableDataSource<Int, SectionItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, SectionItem>
     
     private var cancellables = Set<AnyCancellable>()
@@ -25,25 +26,7 @@ class ViewController: UIViewController {
         case article(ArticleDTO)
     }
     
-    private let layoutTypes: [SectionItem] = [
-        .layoutType(LayoutType(name: "List Layout", color: .random(), layout: .list)),
-        .layoutType(LayoutType(name: "Simple Grid Layout", color: .random(), layout: .simpleGrid)),
-        .layoutType(LayoutType(name: "Lazy Grid Layout", color: .random(), layout: .lazyGrid)),
-        .layoutType(LayoutType(name: "Onboarding layout", color: .random(), layout: .onboarding)),
-        .layoutType(LayoutType(name: "Background decoration", color: .random(), layout: .insetList)),
-        .layoutType(LayoutType(name: "Sticky headers", color: .random(), layout: .stickyHeaders)),
-        .layoutType(LayoutType(name: "System List Layout", color: .random(), layout: .systemList)),
-        .layoutType(LayoutType(name: "Responsive layout", color: .random(), layout: .responsiveLayout)),
-    ]
-    
-    private let examples: [SectionItem] = [
-        .example(ComplexExample(name: "Instagram profile example", type: .instantgram, color: .random())),
-        .example(ComplexExample(name: "Photos with layout switch", type: .photos, color: .random())),
-        .example(ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random())),
-        .example(ComplexExample(name: "Badges example", type: .badges, color: .random())),
-    ]
-    
-    var datasource: UICollectionViewDiffableDataSource<Int, SectionItem>!
+    private var datasource: Datasource!
     
     private var articles: [ArticleDTO]?
     
@@ -87,32 +70,7 @@ class ViewController: UIViewController {
     
     // MARK: configureDatasource
     private func configureDatasource() {
-        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            
-            switch item {
-            case .color(let color):
-                
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCell.reuseIdentifier, for: indexPath)
-                cell.contentView.backgroundColor = color
-                return cell
-                
-            case .article(let data):
-                let cell: ArticleCell = collectionView.dequeue(for: indexPath)
-                cell.configure(with: data)
-                return cell
-                
-            case .layoutType(let layout):
-                
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LayoutTypeCell.reuseIdentifier, for: indexPath) as! LayoutTypeCell
-                cell.configure(with: layout)
-                return cell
-                
-            case .example(let example):
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LayoutTypeCell.reuseIdentifier, for: indexPath) as! LayoutTypeCell
-                cell.configure(with: example)
-                return cell
-            }
-        })
+        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
         
         datasource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
             if kind == UICollectionView.elementKindSectionFooter {
@@ -130,12 +88,36 @@ class ViewController: UIViewController {
             } else if indexPath.section == 1 {
                 header.configure(with: "More complex examples")
             } else if indexPath.section == 2 {
-                header.configure(with: "iOS News")
+                header.configure(with: "iOS Feeds")
             } else {
                 header.configure(with: "Responsive section items")
             }
             
             return header
+        }
+    }
+    
+    private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: SectionItem) -> UICollectionViewCell {
+        switch item {
+        case .color(let color):
+            let cell: ColorCell = collectionView.dequeue(for: indexPath)
+            cell.contentView.backgroundColor = color
+            return cell
+            
+        case .article(let data):
+            let cell: ArticleCell = collectionView.dequeue(for: indexPath)
+            cell.configure(with: data)
+            return cell
+            
+        case .layoutType(let layout):
+            let cell: LayoutTypeCell = collectionView.dequeue(for: indexPath)
+            cell.configure(with: layout)
+            return cell
+            
+        case .example(let example):
+            let cell: LayoutTypeCell = collectionView.dequeue(for: indexPath)
+            cell.configure(with: example)
+            return cell
         }
     }
     
@@ -150,8 +132,8 @@ class ViewController: UIViewController {
         
         snapshot.appendSections(sections)
         
-        snapshot.appendItems(layoutTypes, toSection: sections.first)
-        snapshot.appendItems(examples, toSection: sections[1])
+        snapshot.appendItems(LayoutType.available.map(SectionItem.layoutType), toSection: sections.first)
+        snapshot.appendItems(ComplexExample.available.map(SectionItem.example), toSection: sections[1])
         
         if let articles = articles {
             let shuffled = articles.shuffled()
@@ -243,8 +225,7 @@ class ViewController: UIViewController {
     }
     
     private func mediumSection(addHeader: Bool = false) -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
-                                              heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(UIDevice.current.isIpad ? 0.25 : 0.5), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets.uniform(size: 10)
         
