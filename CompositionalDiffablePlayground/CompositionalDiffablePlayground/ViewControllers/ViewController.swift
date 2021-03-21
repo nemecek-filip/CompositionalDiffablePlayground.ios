@@ -61,6 +61,7 @@ class ViewController: UIViewController {
     
     private func setupNotifications() {
         FeedsService.shared.$articles
+            .receive(on: RunLoop.main)
             .sink { [weak self] (articles) in
                 self?.articles = articles
                 self?.generateData(animated: true)

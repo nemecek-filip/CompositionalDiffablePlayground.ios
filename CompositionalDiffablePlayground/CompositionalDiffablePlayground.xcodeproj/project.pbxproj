@@ -49,6 +49,10 @@
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
 		DC86AC61257145290071B7EA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC60257145290071B7EA /* Database.swift */; };
 		DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC64257145EC0071B7EA /* JokeDTO.swift */; };
+		DCA42C2426036D0000E0E835 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA42C2226036D0000E0E835 /* SelectableCell.swift */; };
+		DCA42C2526036D0000E0E835 /* SelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA42C2326036D0000E0E835 /* SelectableCell.xib */; };
+		DCA42C28260381F400E0E835 /* MultiSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */; };
+		DCA42C2B2603823D00E0E835 /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA42C2A2603823D00E0E835 /* SelectableItem.swift */; };
 		DCAB988F25E12E6F003AF6CD /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */; };
 		DCAB989325E14A39003AF6CD /* PhotoSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */; };
 		DCAB989425E14A39003AF6CD /* PhotoSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */; };
@@ -130,6 +134,10 @@
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		DC86AC60257145290071B7EA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		DC86AC64257145EC0071B7EA /* JokeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDTO.swift; sourceTree = "<group>"; };
+		DCA42C2226036D0000E0E835 /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
+		DCA42C2326036D0000E0E835 /* SelectableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCell.xib; sourceTree = "<group>"; };
+		DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectViewController.swift; sourceTree = "<group>"; };
+		DCA42C2A2603823D00E0E835 /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		DCAB989125E14A39003AF6CD /* PhotoSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSummaryCell.swift; sourceTree = "<group>"; };
 		DCAB989225E14A39003AF6CD /* PhotoSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoSummaryCell.xib; sourceTree = "<group>"; };
@@ -322,6 +330,8 @@
 				DCAB989625E14E20003AF6CD /* GradientView.swift */,
 				DCD5C41725E97F8E00F09573 /* ArticleCell.swift */,
 				DCD5C41825E97F8E00F09573 /* ArticleCell.xib */,
+				DCA42C2226036D0000E0E835 /* SelectableCell.swift */,
+				DCA42C2326036D0000E0E835 /* SelectableCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +356,7 @@
 				DC5410FA25D282140023DA2E /* StickyHeadersViewController.swift */,
 				DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */,
 				DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */,
+				DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +378,7 @@
 				DCD97A0525612204002E2BD3 /* LayoutType.swift */,
 				DC1E1442257EBD2F00777498 /* ComplexExample.swift */,
 				DC6CC30125CD8EFC001B95E4 /* Color.swift */,
+				DCA42C2A2603823D00E0E835 /* SelectableItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD979D7255F2254002E2BD3 /* LaunchScreen.storyboard in Resources */,
+				DCA42C2526036D0000E0E835 /* SelectableCell.xib in Resources */,
 				DCD5C41A25E97F8E00F09573 /* ArticleCell.xib in Resources */,
 				DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
@@ -473,11 +486,13 @@
 				DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */,
 				DC054B3E2572F71600FED77A /* CellFromNib.swift in Sources */,
 				DC59B001256969EE00C5E260 /* UICollectionViewCompositionalLayout+Extension.swift in Sources */,
+				DCA42C2B2603823D00E0E835 /* SelectableItem.swift in Sources */,
 				DC4DA05A259DEFDF00EF60A6 /* BadgeView.swift in Sources */,
 				DCF703A6259A16C600EF12FD /* BackgroundDecorationViewController.swift in Sources */,
 				DCD979EE255F3189002E2BD3 /* ColorCell.swift in Sources */,
 				DCD979CB255F2252002E2BD3 /* AppDelegate.swift in Sources */,
 				DC30B4FF25B323CA00E5A57F /* ProfileHeaderData.swift in Sources */,
+				DCA42C2426036D0000E0E835 /* SelectableCell.swift in Sources */,
 				DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */,
 				DCBE4849256126D000341818 /* CompositionalCollectionViewViewController.swift in Sources */,
 				DC092D5E25C47C520031399B /* OnboardingLayoutViewController.swift in Sources */,
@@ -512,6 +527,7 @@
 				DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
+				DCA42C28260381F400E0E835 /* MultiSelectViewController.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,
 				DC054B352572F52C00FED77A /* JokesViewController.swift in Sources */,
 				DCD5C41525E97D8900F09573 /* ArticleDTO.swift in Sources */,
