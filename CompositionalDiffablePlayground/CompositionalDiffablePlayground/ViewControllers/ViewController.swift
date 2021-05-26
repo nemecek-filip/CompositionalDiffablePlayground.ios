@@ -71,9 +71,11 @@ class ViewController: UIViewController {
     
     // MARK: configureDatasource
     private func configureDatasource() {
-        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        datasource = Datasource(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            return self.cell(collectionView: collectionView, indexPath: indexPath, item: item)
+        })
         
-        datasource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+        datasource.supplementaryViewProvider = { [unowned self] (collectionView, kind, indexPath) in
             if kind == UICollectionView.elementKindSectionFooter {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier, for: indexPath) as! SimpleFooterView
                 
@@ -246,7 +248,7 @@ class ViewController: UIViewController {
     }
     
     private func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+        let layout = UICollectionViewCompositionalLayout { [unowned self] sectionIndex, layoutEnvironment in
             if 0...1 ~= sectionIndex {
                 return self.topSection()
             } else if 2...3 ~= sectionIndex {

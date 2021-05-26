@@ -48,6 +48,8 @@ class ResponsiveLayoutViewController: CompositionalCollectionViewViewController 
     }
     
     override func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout(sectionProvider: layoutSection(forIndex:environment:))
+        return UICollectionViewCompositionalLayout { [unowned self] index, env in
+            return self.layoutSection(forIndex: index, environment: env)
+        }
     }
 }

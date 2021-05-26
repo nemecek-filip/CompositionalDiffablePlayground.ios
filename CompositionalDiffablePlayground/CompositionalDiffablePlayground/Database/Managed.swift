@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol Managed: class, NSFetchRequestResult {
+protocol Managed: NSFetchRequestResult {
     static var entityName: String { get }
     static var defaultSortDescriptors: [NSSortDescriptor] { get }
 }

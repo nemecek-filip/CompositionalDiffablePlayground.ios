@@ -40,7 +40,9 @@ class WordsViewController: CompositionalCollectionViewViewController {
         collectionView.contentInset.top = 15
         collectionView.register(cell: LetterCell.self)
         
-        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        datasource = Datasource(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            return self.cell(collectionView: collectionView, indexPath: indexPath, item: item)
+        })
     }
     
     private func snapshot() -> Snapshot {

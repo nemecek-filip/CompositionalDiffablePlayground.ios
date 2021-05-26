@@ -44,9 +44,13 @@ class InstantgramViewController: UIViewController {
     }
     
     private func configureDatasource() {
-        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        datasource = Datasource(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            return self.cell(collectionView: collectionView, indexPath: indexPath, item: item)
+        })
         
-        datasource.supplementaryViewProvider = supplementary(collectionView:kind:indexPath:)
+        datasource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
+            return self.supplementary(collectionView: collectionView, kind: kind, indexPath: indexPath)
+        }
         
         datasource.apply(snapshot(), animatingDifferences: false)
     }
@@ -145,6 +149,8 @@ extension InstantgramViewController {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout(sectionProvider: sectionFor(index:environment:))
+        return UICollectionViewCompositionalLayout { [unowned self] index, env in
+            return self.sectionFor(index: index, environment: env)
+        }
     }
 }

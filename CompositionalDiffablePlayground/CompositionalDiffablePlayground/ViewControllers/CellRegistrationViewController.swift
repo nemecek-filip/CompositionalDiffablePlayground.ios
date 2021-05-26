@@ -27,7 +27,7 @@ class CellRegistrationViewController: CompositionalCollectionViewViewController 
             cell.contentView.backgroundColor = color
         }
         
-        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, model) -> UICollectionViewCell? in
+        datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { [unowned self] (collectionView, indexPath, model) -> UICollectionViewCell? in
             
             let cell = collectionView.dequeueConfiguredReusableCell(using: self.colorCellRegistration, for: indexPath, item: model)
             

@@ -23,7 +23,7 @@ class SimpleGridViewController: CompositionalCollectionViewViewController {
         }
     }
     
-    private lazy var sizeMenu: UIMenu = {
+    private lazy var sizeMenu: UIMenu = { [unowned self] in
         return UIMenu(title: "Select size", image: nil, identifier: nil, options: [.displayInline], children: [
             UIAction(title: "Half", image: UIImage(systemName: "square.grid.2x2.fill"), handler: { (_) in
                 self.gridItemSize = .half

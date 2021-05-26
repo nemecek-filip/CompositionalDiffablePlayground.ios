@@ -33,7 +33,9 @@ class OnboardingLayoutViewController: CompositionalCollectionViewViewController 
         collectionView.register(header: SimpleHeaderView.self)
         collectionView.alwaysBounceVertical = false
         
-        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        datasource = Datasource(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            return self.cell(collectionView: collectionView, indexPath: indexPath, item: item)
+        })
         
         datasource.apply(snapshot(), animatingDifferences: false)
     }

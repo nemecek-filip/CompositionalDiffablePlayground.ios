@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol InstantiatesFromNib: class {
+protocol InstantiatesFromNib: AnyObject {
     func setupView()
 }
 

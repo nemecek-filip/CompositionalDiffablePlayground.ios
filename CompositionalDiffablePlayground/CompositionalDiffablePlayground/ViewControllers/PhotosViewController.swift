@@ -74,9 +74,13 @@ class PhotosViewController: CompositionalCollectionViewViewController {
     }
     
     private func configureDatasource() {
-        datasource = Datasource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+        datasource = Datasource(collectionView: collectionView, cellProvider: { [unowned self] collectionView, indexPath, item in
+            return self.cell(collectionView: collectionView, indexPath: indexPath, item: item)
+        })
         
-        datasource.supplementaryViewProvider = supplementary(collectionView:kind:indexPath:)
+        datasource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
+            return self.supplementary(collectionView: collectionView, kind: kind, indexPath: indexPath)
+        }
         
         datasource.apply(snapshot(), animatingDifferences: false)
     }
@@ -163,7 +167,9 @@ class PhotosViewController: CompositionalCollectionViewViewController {
     }
     
     override func createLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout(sectionProvider: layoutSection(forIndex:environment:))
+        return UICollectionViewCompositionalLayout { [unowned self] index, env in
+            return self.layoutSection(forIndex: index, environment: env)
+        }
     }
     
     private func setupView() {

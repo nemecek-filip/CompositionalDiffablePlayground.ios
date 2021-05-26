@@ -21,7 +21,10 @@ class StickyHeadersViewController: BackgroundDecorationViewController {
     
     override func configureDatasource() {
         datasource = ItemsDiffableDataSource(collectionView: collectionView)
-        datasource.supplementaryViewProvider = supplementary(collectionView:kind:indexPath:)
+        
+        datasource.supplementaryViewProvider = { [unowned self] collectionView, kind, indexPath in
+            return self.supplementary(collectionView: collectionView, kind: kind, indexPath: indexPath)
+        }
         
         datasource.apply(snapshot(), animatingDifferences: false)
     }
