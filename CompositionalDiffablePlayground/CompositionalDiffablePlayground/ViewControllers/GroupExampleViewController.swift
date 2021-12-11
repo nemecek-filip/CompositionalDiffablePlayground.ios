@@ -8,6 +8,7 @@
 import UIKit
 
 // this is not available via the app, I used it for one of my blogposts
+// https://nemecek.be/blog/66/detailed-look-at-the-nscollectionlayoutgroup
 class GroupExampleController: CompositionalCollectionViewViewController {
     
     var datasource: ColoredDiffableDataSource!

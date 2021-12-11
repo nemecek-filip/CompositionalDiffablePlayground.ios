@@ -7,8 +7,8 @@
 
 import UIKit
 
+// https://nemecek.be/blog/83/how-to-create-sticky-headers-with-compositional-layout
 class StickyHeadersViewController: BackgroundDecorationViewController {
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

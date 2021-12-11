@@ -7,6 +7,7 @@
 
 import UIKit
 
+// https://nemecek.be/blog/86/re-creating-apple-photos-layout-animations-with-compositional-layout
 class PhotosViewController: CompositionalCollectionViewViewController {
     
     typealias Datasource = UICollectionViewDiffableDataSource<Section, Item>

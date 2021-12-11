@@ -7,6 +7,7 @@
 
 import UIKit
 
+// https://nemecek.be/blog/72/building-instagram-profile-screen-with-compositional-layout
 class InstantgramViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     

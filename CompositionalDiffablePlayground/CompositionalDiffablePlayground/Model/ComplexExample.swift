@@ -24,7 +24,8 @@ extension ComplexExample {
     static let available: [ComplexExample] = [
         ComplexExample(name: "Instagram profile example", type: .instantgram, color: .random()),
         ComplexExample(name: "Photos with layout switch", type: .photos, color: .random()),
-        ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()),
+        // The API is no longer available
+        //ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()),
         ComplexExample(name: "Badges example", type: .badges, color: .random()),
     ]
 }
