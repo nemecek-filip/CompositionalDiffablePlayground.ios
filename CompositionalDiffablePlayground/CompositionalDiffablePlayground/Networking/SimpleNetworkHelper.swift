@@ -11,7 +11,7 @@ import Foundation
 class SimpleNetworkHelper {
     static let shared = SimpleNetworkHelper()
     
-    func get<T: Decodable>(fromUrl url: URL, completion: @escaping (T?) -> ()) {
+    func get<T: Decodable>(fromUrl url: URL, customDecoder: JSONDecoder? = nil, completion: @escaping (T?) -> ()) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print(error)
@@ -25,7 +25,7 @@ class SimpleNetworkHelper {
                 return
             }
             
-            let decoder = JSONDecoder()
+            let decoder = customDecoder ?? JSONDecoder()
             
             do {
                 let decoded = try decoder.decode(T.self, from: data)
@@ -44,5 +44,13 @@ class SimpleNetworkHelper {
     
     func getArticles(completion: @escaping ([ArticleDTO]?) -> ()) {
         self.get(fromUrl: URL(string: "https://iosfeeds.com/api/articles/")!, completion: completion)
+    }
+    
+    func getAppNews(completion: @escaping (AppNewsResultsDTO?) -> ()) {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        self.get(fromUrl: URL(string: "https://indiecatalog.app/api/news/")!, customDecoder: decoder, completion: completion)
     }
 }

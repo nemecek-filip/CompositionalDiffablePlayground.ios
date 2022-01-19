@@ -18,6 +18,8 @@
 		DC13860425AE3F9700BCAB5E /* LetterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860325AE3F9700BCAB5E /* LetterCell.swift */; };
 		DC13860725AE403700BCAB5E /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC13860625AE403700BCAB5E /* WordsViewController.swift */; };
 		DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E1442257EBD2F00777498 /* ComplexExample.swift */; };
+		DC237BE327988F8500E14EDE /* IndieAppNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */; };
+		DC237BE427988F8500E14EDE /* IndieAppNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */; };
 		DC30B4F425B3205700E5A57F /* Instantgram.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC30B4F325B3205700E5A57F /* Instantgram.storyboard */; };
 		DC30B4F825B3226300E5A57F /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B4F725B3226300E5A57F /* ProfileHeaderCell.swift */; };
 		DC30B4FB25B3238300E5A57F /* InstantgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */; };
@@ -44,6 +46,9 @@
 		DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6474E625D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift */; };
 		DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6CC30125CD8EFC001B95E4 /* Color.swift */; };
 		DC6CC30725CDBAF6001B95E4 /* ActionButtonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */; };
+		DC7DA7522781D42800DF8FB5 /* IndieAppNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DA7512781D42800DF8FB5 /* IndieAppNewsViewController.swift */; };
+		DC7DA7542781D4DE00DF8FB5 /* AppNewsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DA7532781D4DE00DF8FB5 /* AppNewsDTO.swift */; };
+		DC7DA7562781D55800DF8FB5 /* AppNewsResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DA7552781D55800DF8FB5 /* AppNewsResultsDTO.swift */; };
 		DC86AC5825713E3B0071B7EA /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5625713E3B0071B7EA /* Database.xcdatamodeld */; };
 		DC86AC5B257144830071B7EA /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5A257144830071B7EA /* Joke.swift */; };
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
@@ -103,6 +108,8 @@
 		DC13860325AE3F9700BCAB5E /* LetterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCell.swift; sourceTree = "<group>"; };
 		DC13860625AE403700BCAB5E /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		DC1E1442257EBD2F00777498 /* ComplexExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexExample.swift; sourceTree = "<group>"; };
+		DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAppNewsCell.swift; sourceTree = "<group>"; };
+		DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndieAppNewsCell.xib; sourceTree = "<group>"; };
 		DC30B4F325B3205700E5A57F /* Instantgram.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instantgram.storyboard; sourceTree = "<group>"; };
 		DC30B4F725B3226300E5A57F /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantgramViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +136,9 @@
 		DC6474E625D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCollectionLayoutDimension+Extension.swift"; sourceTree = "<group>"; };
 		DC6CC30125CD8EFC001B95E4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DC6CC30625CDBAF6001B95E4 /* ActionButtonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonHeader.swift; sourceTree = "<group>"; };
+		DC7DA7512781D42800DF8FB5 /* IndieAppNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAppNewsViewController.swift; sourceTree = "<group>"; };
+		DC7DA7532781D4DE00DF8FB5 /* AppNewsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNewsDTO.swift; sourceTree = "<group>"; };
+		DC7DA7552781D55800DF8FB5 /* AppNewsResultsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNewsResultsDTO.swift; sourceTree = "<group>"; };
 		DC86AC5725713E3B0071B7EA /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		DC86AC5A257144830071B7EA /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
@@ -236,6 +246,8 @@
 			children = (
 				DC86AC64257145EC0071B7EA /* JokeDTO.swift */,
 				DCD5C41425E97D8900F09573 /* ArticleDTO.swift */,
+				DC7DA7532781D4DE00DF8FB5 /* AppNewsDTO.swift */,
+				DC7DA7552781D55800DF8FB5 /* AppNewsResultsDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -332,6 +344,8 @@
 				DCD5C41825E97F8E00F09573 /* ArticleCell.xib */,
 				DCA42C2226036D0000E0E835 /* SelectableCell.swift */,
 				DCA42C2326036D0000E0E835 /* SelectableCell.xib */,
+				DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */,
+				DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +371,7 @@
 				DC54111C25D4631F0023DA2E /* ResponsiveLayoutExample.swift */,
 				DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */,
 				DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */,
+				DC7DA7512781D42800DF8FB5 /* IndieAppNewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -444,6 +459,7 @@
 				DCA42C2526036D0000E0E835 /* SelectableCell.xib in Resources */,
 				DCD5C41A25E97F8E00F09573 /* ArticleCell.xib in Resources */,
 				DC054B3A2572F5FE00FED77A /* JokeCell.xib in Resources */,
+				DC237BE427988F8500E14EDE /* IndieAppNewsCell.xib in Resources */,
 				DCD979D4255F2254002E2BD3 /* Assets.xcassets in Resources */,
 				DC30B50F25B36D0C00E5A57F /* ProfilePhotosHeaderView.xib in Resources */,
 				DCD979D2255F2252002E2BD3 /* Main.storyboard in Resources */,
@@ -460,12 +476,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7DA7522781D42800DF8FB5 /* IndieAppNewsViewController.swift in Sources */,
 				DCD5C41225E97D6400F09573 /* FeedsService.swift in Sources */,
 				DC30B50625B347AD00E5A57F /* ProfileHighlight.swift in Sources */,
 				DCD0DAC1256A671C003BA138 /* UICollectionReusableView+Extension.swift in Sources */,
+				DC7DA7562781D55800DF8FB5 /* AppNewsResultsDTO.swift in Sources */,
 				DCD97A0625612204002E2BD3 /* LayoutType.swift in Sources */,
 				DCD979E3255F2779002E2BD3 /* NSDirectionalEdgeInsets+Extension.swift in Sources */,
 				DC30B50925B34F9C00E5A57F /* ProfilePhotosHeaderView.swift in Sources */,
+				DC237BE327988F8500E14EDE /* IndieAppNewsCell.swift in Sources */,
 				DCF703A3259A166300EF12FD /* RoundedBackgroundView.swift in Sources */,
 				DC54111D25D463200023DA2E /* ResponsiveLayoutExample.swift in Sources */,
 				DCD5C41925E97F8E00F09573 /* ArticleCell.swift in Sources */,
@@ -527,6 +546,7 @@
 				DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
+				DC7DA7542781D4DE00DF8FB5 /* AppNewsDTO.swift in Sources */,
 				DCA42C28260381F400E0E835 /* MultiSelectViewController.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,
 				DC054B352572F52C00FED77A /* JokesViewController.swift in Sources */,

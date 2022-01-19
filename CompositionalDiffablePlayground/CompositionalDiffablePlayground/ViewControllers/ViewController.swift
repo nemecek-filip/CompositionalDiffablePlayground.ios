@@ -325,6 +325,8 @@ extension ViewController: UICollectionViewDelegate {
                 vc = PhotosViewController()
             case .badges:
                 vc = BadgesViewController()
+            case .appNews:
+                vc = IndieAppNewsViewController()
             case .instantgram:
                 vc = UIStoryboard(name: "Instantgram", bundle: nil).instantiateInitialViewController()!
             }
