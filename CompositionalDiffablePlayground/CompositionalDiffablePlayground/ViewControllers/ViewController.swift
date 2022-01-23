@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     private var cancellables = Set<AnyCancellable>()
     
+    private let pagingInfoSubject = PassthroughSubject<PagingInfo, Never>()
+    
     enum SectionItem: Hashable {
         case layoutType(LayoutType)
         case color(UIColor)
@@ -49,6 +51,7 @@ class ViewController: UIViewController {
         collectionView.register(cellFromNib: ArticleCell.self)
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         collectionView.register(SimpleFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier)
+        collectionView.register(PagingSectionFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PagingSectionFooterView.reuseIdentifier)
         collectionView.setCollectionViewLayout(createLayout(), animated: false)
         collectionView.delegate = self
         
@@ -77,6 +80,17 @@ class ViewController: UIViewController {
         
         datasource.supplementaryViewProvider = { [unowned self] (collectionView, kind, indexPath) in
             if kind == UICollectionView.elementKindSectionFooter {
+                if 0...1 ~= indexPath.section {
+                    let pagingFooter = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: PagingSectionFooterView.reuseIdentifier, for: indexPath) as! PagingSectionFooterView
+                    
+                    let itemCount = self.datasource.snapshot().numberOfItems(inSection: indexPath.section)
+                    pagingFooter.configure(with: itemCount)
+                    
+                    pagingFooter.subscribeTo(subject: pagingInfoSubject, for: indexPath.section)
+                    
+                    return pagingFooter
+                }
+                
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SimpleFooterView.reuseIdentifier, for: indexPath) as! SimpleFooterView
                 
                 footer.configure(with: "Thanks for checking out this example!")
@@ -153,7 +167,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: Layout
-    private func topSection() -> NSCollectionLayoutSection {
+    private func topSection(_ sectionIndex: Int) -> NSCollectionLayoutSection {
         let item: NSCollectionLayoutItem
         
         if UIDevice.current.isIpad {
@@ -173,6 +187,20 @@ class ViewController: UIViewController {
         section.orthogonalScrollingBehavior = UIDevice.current.isIpad ? .continuous : .groupPagingCentered
         
         addStandardHeader(toSection: section)
+        
+        if !UIDevice.current.isIpad {
+            let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(20))
+            let pagingFooterElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
+            section.boundarySupplementaryItems += [pagingFooterElement]
+            
+            section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+                guard let self = self else { return }
+                
+                let page = round(offset.x / self.view.bounds.width)
+                
+                self.pagingInfoSubject.send(PagingInfo(sectionIndex: sectionIndex, currentPage: Int(page)))
+            }
+        }
         
         return section
     }
@@ -250,7 +278,7 @@ class ViewController: UIViewController {
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { [unowned self] sectionIndex, layoutEnvironment in
             if 0...1 ~= sectionIndex {
-                return self.topSection()
+                return self.topSection(sectionIndex)
             } else if 2...3 ~= sectionIndex {
                 return self.mediumSection(addHeader: sectionIndex == 2)
             } else {

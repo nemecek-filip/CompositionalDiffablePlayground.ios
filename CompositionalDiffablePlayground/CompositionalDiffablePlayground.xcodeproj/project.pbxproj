@@ -54,6 +54,8 @@
 		DC86AC5E257144890071B7EA /* Managed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC5D257144890071B7EA /* Managed.swift */; };
 		DC86AC61257145290071B7EA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC60257145290071B7EA /* Database.swift */; };
 		DC86AC65257145EC0071B7EA /* JokeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC86AC64257145EC0071B7EA /* JokeDTO.swift */; };
+		DC934281279D6830004335CE /* PagingSectionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC934280279D6830004335CE /* PagingSectionFooterView.swift */; };
+		DC934283279D6BA4004335CE /* PagingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC934282279D6BA4004335CE /* PagingInfo.swift */; };
 		DCA42C2426036D0000E0E835 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA42C2226036D0000E0E835 /* SelectableCell.swift */; };
 		DCA42C2526036D0000E0E835 /* SelectableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA42C2326036D0000E0E835 /* SelectableCell.xib */; };
 		DCA42C28260381F400E0E835 /* MultiSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */; };
@@ -144,6 +146,8 @@
 		DC86AC5D257144890071B7EA /* Managed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managed.swift; sourceTree = "<group>"; };
 		DC86AC60257145290071B7EA /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		DC86AC64257145EC0071B7EA /* JokeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeDTO.swift; sourceTree = "<group>"; };
+		DC934280279D6830004335CE /* PagingSectionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingSectionFooterView.swift; sourceTree = "<group>"; };
+		DC934282279D6BA4004335CE /* PagingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingInfo.swift; sourceTree = "<group>"; };
 		DCA42C2226036D0000E0E835 /* SelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
 		DCA42C2326036D0000E0E835 /* SelectableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCell.xib; sourceTree = "<group>"; };
 		DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 				DCD5C41425E97D8900F09573 /* ArticleDTO.swift */,
 				DC7DA7532781D4DE00DF8FB5 /* AppNewsDTO.swift */,
 				DC7DA7552781D55800DF8FB5 /* AppNewsResultsDTO.swift */,
+				DC934282279D6BA4004335CE /* PagingInfo.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				DCA42C2326036D0000E0E835 /* SelectableCell.xib */,
 				DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */,
 				DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */,
+				DC934280279D6830004335CE /* PagingSectionFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				DC6CC30225CD8EFC001B95E4 /* Color.swift in Sources */,
 				DC4D67BF2564609B00A90329 /* SimpleHeaderView.swift in Sources */,
 				DCAB989325E14A39003AF6CD /* PhotoSummaryCell.swift in Sources */,
+				DC934281279D6830004335CE /* PagingSectionFooterView.swift in Sources */,
 				DCC67DB025974A2F00CA71EF /* CellRegistrationViewController.swift in Sources */,
 				DC30B4F825B3226300E5A57F /* ProfileHeaderCell.swift in Sources */,
 				DC59B00425696A6900C5E260 /* SystemListViewController.swift in Sources */,
@@ -546,6 +553,7 @@
 				DC6474E725D6805D002F1AF4 /* NSCollectionLayoutDimension+Extension.swift in Sources */,
 				DCD979EA255F2BBF002E2BD3 /* NSCollectionLayoutItem+Extension.swift in Sources */,
 				DC054B392572F5FE00FED77A /* JokeCell.swift in Sources */,
+				DC934283279D6BA4004335CE /* PagingInfo.swift in Sources */,
 				DC7DA7542781D4DE00DF8FB5 /* AppNewsDTO.swift in Sources */,
 				DCA42C28260381F400E0E835 /* MultiSelectViewController.swift in Sources */,
 				DC86AC61257145290071B7EA /* Database.swift in Sources */,
