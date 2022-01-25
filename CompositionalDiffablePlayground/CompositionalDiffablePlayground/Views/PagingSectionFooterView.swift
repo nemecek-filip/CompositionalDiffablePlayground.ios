@@ -5,9 +5,7 @@
 //  Created by Filip Němeček on 23.01.2022.
 //
 
-import Foundation
 import UIKit
-
 import Combine
 
 class PagingSectionFooterView: UICollectionReusableView {
@@ -34,10 +32,6 @@ class PagingSectionFooterView: UICollectionReusableView {
     
     func configure(with numberOfPages: Int) {
         pageControl.numberOfPages = numberOfPages
-    }
-    
-    func didChange(page: Int) {
-        pageControl.currentPage = page
     }
     
     func subscribeTo(subject: PassthroughSubject<PagingInfo, Never>, for section: Int) {
