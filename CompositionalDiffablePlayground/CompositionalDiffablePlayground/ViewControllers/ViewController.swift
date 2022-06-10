@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import SafariServices
 
-typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, UIColor>
+typealias ColorsSnapshot = NSDiffableDataSourceSnapshot<Int, Color>
 
 class ViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     enum SectionItem: Hashable {
         case layoutType(LayoutType)
-        case color(UIColor)
+        case color(UIColor, UUID)
         case example(ComplexExample)
         case article(ArticleDTO)
     }
@@ -114,9 +114,10 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: Cell
     private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: SectionItem) -> UICollectionViewCell {
         switch item {
-        case .color(let color):
+        case .color(let color, _):
             let cell: ColorCell = collectionView.dequeue(for: indexPath)
             cell.contentView.backgroundColor = color
             return cell
@@ -158,7 +159,7 @@ class ViewController: UIViewController {
         }
         
         for section in sections.suffix(from: 3) {
-            let items = Array.init(repeatingExpression: SectionItem.color(.random()), count: Int.random(in: 4...9))
+            let items = Array.init(repeatingExpression: SectionItem.color(.random(), UUID()), count: Int.random(in: 4...9))
             
             snapshot.appendItems(items, toSection: section)
         }

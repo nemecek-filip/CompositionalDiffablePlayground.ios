@@ -8,7 +8,11 @@
 import UIKit
 
 extension UIColor {
+    static let safeHue = Array(0...150) + Array(230...359)
+    
     static func random() -> UIColor {
-        return UIColor(hue: CGFloat.random(in: 0...359), saturation: 0.7, brightness: 1, alpha: 1)
+        let randomHue = safeHue.randomElement()!
+        
+        return UIColor(hue: CGFloat(randomHue) / 100, saturation: 0.7, brightness: 1, alpha: 1)
     }
 }

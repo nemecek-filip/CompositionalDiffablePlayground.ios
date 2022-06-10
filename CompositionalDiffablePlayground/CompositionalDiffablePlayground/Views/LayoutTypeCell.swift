@@ -42,7 +42,9 @@ class LayoutTypeCell: RoundedCornersCollectionCell, CellFromNib {
     
     private func configure(color: UIColor) {
         originalBackgroundColor = color
-        contentView.backgroundColor = originalBackgroundColor.withAlphaComponent(0.6)
+        contentView.backgroundColor = originalBackgroundColor.withAlphaComponent(0.8)
+        
+        
     }
 
 }

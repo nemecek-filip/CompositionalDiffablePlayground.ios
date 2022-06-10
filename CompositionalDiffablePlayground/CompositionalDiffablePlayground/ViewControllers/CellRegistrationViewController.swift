@@ -10,9 +10,9 @@ import UIKit
 @available(iOS 14.0, *)
 class CellRegistrationViewController: CompositionalCollectionViewViewController {
     
-    private var colorCellRegistration: UICollectionView.CellRegistration<ColorCell, UIColor>!
+    private var colorCellRegistration: UICollectionView.CellRegistration<ColorCell, Color>!
     
-    private var datasource: UICollectionViewDiffableDataSource<Int, UIColor>!
+    private var datasource: UICollectionViewDiffableDataSource<Int, Color>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class CellRegistrationViewController: CompositionalCollectionViewViewController 
     
     private func setupView() {
         colorCellRegistration = UICollectionView.CellRegistration { cell, indexPath, color in
-            cell.contentView.backgroundColor = color
+            cell.contentView.backgroundColor = color.color
         }
         
         datasource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { [unowned self] (collectionView, indexPath, model) -> UICollectionViewCell? in
