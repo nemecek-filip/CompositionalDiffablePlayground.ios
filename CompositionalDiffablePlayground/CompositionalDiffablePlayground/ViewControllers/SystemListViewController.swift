@@ -9,6 +9,7 @@ import UIKit
 
 @available(iOS 14.0, *)
 class SystemListViewController: CompositionalCollectionViewViewController {
+    typealias Datasource = UICollectionViewDiffableDataSource<Int, Color>
     
     struct ListAppearance {
         let name: String
@@ -25,7 +26,7 @@ class SystemListViewController: CompositionalCollectionViewViewController {
     
     let defaultAppearance = ListAppearance.allOptions.first!
     
-    var datasource: ColoredDiffableDataSource!
+    var datasource: Datasource!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,24 @@ class SystemListViewController: CompositionalCollectionViewViewController {
         collectionView.register(cell: ColorCell.self)
         collectionView.contentInset.top = 10
         
-        datasource = ColoredDiffableDataSource(collectionView: collectionView)
+        let colorRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Color> { cell, indexPath, item in
+            var content = cell.defaultContentConfiguration()
+            
+            content.text = "Main text"
+            
+            cell.contentConfiguration = content
+            
+            var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
+
+            backgroundConfig.backgroundColor = item.color
+            
+            cell.backgroundConfiguration = backgroundConfig
+            
+        }
+        
+        datasource = Datasource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            return collectionView.dequeueConfiguredReusableCell(using: colorRegistration, for: indexPath, item: itemIdentifier)
+        })
         
         loadData()
         

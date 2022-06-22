@@ -18,6 +18,7 @@ struct ComplexExample: Hashable {
         case instantgram
         case photos
         case appNews
+        case settings
     }
 }
 
@@ -29,5 +30,6 @@ extension ComplexExample {
         // The API is no longer available
         //ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()),
         ComplexExample(name: "Badges example", type: .badges, color: .random()),
+        ComplexExample(name: "Settings", type: .settings, color: .systemGray)
     ]
 }

@@ -194,10 +194,14 @@ class ViewController: UIViewController {
             let pagingFooterElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind: UICollectionView.elementKindSectionFooter, alignment: .bottom)
             section.boundarySupplementaryItems += [pagingFooterElement]
             
+            // MARK: Page control setup
             section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
                 guard let self = self else { return }
                 
                 let page = round(offset.x / self.view.bounds.width)
+                
+                var snapshot = datasource.snapshot()
+                snapshot.reconfigureItems(snapshot.sectionIdentifiers[sectionIndex])
                 
                 self.pagingInfoSubject.send(PagingInfo(sectionIndex: sectionIndex, currentPage: Int(page)))
             }
@@ -358,6 +362,14 @@ extension ViewController: UICollectionViewDelegate {
                 vc = IndieAppNewsViewController()
             case .instantgram:
                 vc = UIStoryboard(name: "Instantgram", bundle: nil).instantiateInitialViewController()!
+                
+            case .settings:
+                if #available(iOS 14.0, *) {
+                    vc = SettingsExampleViewController()
+                } else {
+                    vc = nil
+                    showLayoutNotAvailable()
+                }
             }
             
         case .article(let data):

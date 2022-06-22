@@ -20,6 +20,7 @@
 		DC1E1443257EBD2F00777498 /* ComplexExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E1442257EBD2F00777498 /* ComplexExample.swift */; };
 		DC237BE327988F8500E14EDE /* IndieAppNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */; };
 		DC237BE427988F8500E14EDE /* IndieAppNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */; };
+		DC2BA86B2853D62A008A9789 /* SettingsExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2BA86A2853D62A008A9789 /* SettingsExampleViewController.swift */; };
 		DC30B4F425B3205700E5A57F /* Instantgram.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC30B4F325B3205700E5A57F /* Instantgram.storyboard */; };
 		DC30B4F825B3226300E5A57F /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B4F725B3226300E5A57F /* ProfileHeaderCell.swift */; };
 		DC30B4FB25B3238300E5A57F /* InstantgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */; };
@@ -112,6 +113,7 @@
 		DC1E1442257EBD2F00777498 /* ComplexExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexExample.swift; sourceTree = "<group>"; };
 		DC237BE127988F8500E14EDE /* IndieAppNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndieAppNewsCell.swift; sourceTree = "<group>"; };
 		DC237BE227988F8500E14EDE /* IndieAppNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndieAppNewsCell.xib; sourceTree = "<group>"; };
+		DC2BA86A2853D62A008A9789 /* SettingsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExampleViewController.swift; sourceTree = "<group>"; };
 		DC30B4F325B3205700E5A57F /* Instantgram.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Instantgram.storyboard; sourceTree = "<group>"; };
 		DC30B4F725B3226300E5A57F /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		DC30B4FA25B3238300E5A57F /* InstantgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantgramViewController.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 				DCAB988E25E12E6F003AF6CD /* PhotosViewController.swift */,
 				DCA42C27260381F400E0E835 /* MultiSelectViewController.swift */,
 				DC7DA7512781D42800DF8FB5 /* IndieAppNewsViewController.swift */,
+				DC2BA86A2853D62A008A9789 /* SettingsExampleViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				DC54111D25D463200023DA2E /* ResponsiveLayoutExample.swift in Sources */,
 				DCD5C41925E97F8E00F09573 /* ArticleCell.swift in Sources */,
 				DCD979CF255F2252002E2BD3 /* ViewController.swift in Sources */,
+				DC2BA86B2853D62A008A9789 /* SettingsExampleViewController.swift in Sources */,
 				DC86AC5E257144890071B7EA /* Managed.swift in Sources */,
 				DC092D6525C572BB0031399B /* UICollectionView+Extension.swift in Sources */,
 				DCBE48432561253A00341818 /* ColorsSnapshot+Extension.swift in Sources */,

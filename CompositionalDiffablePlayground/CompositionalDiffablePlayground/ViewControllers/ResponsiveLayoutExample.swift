@@ -36,12 +36,12 @@ class ResponsiveLayoutViewController: CompositionalCollectionViewViewController 
         
         let fractionWidth: CGFloat = 1 / (itemCount.rounded())
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionWidth),                                      heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fractionWidth), heightDimension: .fractionalHeight(1.0))
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .small()
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),                                               heightDimension: .fractionalWidth(fractionWidth))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(fractionWidth))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         return NSCollectionLayoutSection(group: group)
