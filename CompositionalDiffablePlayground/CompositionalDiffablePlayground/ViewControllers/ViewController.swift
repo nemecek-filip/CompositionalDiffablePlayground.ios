@@ -200,9 +200,6 @@ class ViewController: UIViewController {
                 
                 let page = round(offset.x / self.view.bounds.width)
                 
-                var snapshot = datasource.snapshot()
-                snapshot.reconfigureItems(snapshot.sectionIdentifiers[sectionIndex])
-                
                 self.pagingInfoSubject.send(PagingInfo(sectionIndex: sectionIndex, currentPage: Int(page)))
             }
         }
