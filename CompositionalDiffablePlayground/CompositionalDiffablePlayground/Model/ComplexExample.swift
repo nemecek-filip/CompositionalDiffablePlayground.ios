@@ -19,6 +19,7 @@ struct ComplexExample: Hashable {
         case photos
         case appNews
         case settings
+        case swiftUI
     }
 }
 
@@ -30,6 +31,8 @@ extension ComplexExample {
         // The API is no longer available
         //ComplexExample(name: "Jokes API with shimmer", type: .jokes, color: .random()),
         ComplexExample(name: "Badges example", type: .badges, color: .random()),
-        ComplexExample(name: "Settings", type: .settings, color: .systemGray)
+        ComplexExample(name: "Settings", type: .settings, color: .systemGray),
+        ComplexExample(name: "SwiftUI Cells", type: .swiftUI, color: .random())
+        
     ]
 }

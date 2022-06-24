@@ -298,8 +298,8 @@ class ViewController: UIViewController {
         return layout
     }
     
-    private func showLayoutNotAvailable() {
-        let ac = UIAlertController(title: nil, message: "This layout is available only for iOS 14", preferredStyle: .alert)
+    private func showLayoutNotAvailable(_ version: String = "iOS 14") {
+        let ac = UIAlertController(title: nil, message: "This layout is available only for \(version)", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(ac, animated: true, completion: nil)
     }
@@ -366,6 +366,14 @@ extension ViewController: UICollectionViewDelegate {
                 } else {
                     vc = nil
                     showLayoutNotAvailable()
+                }
+                
+            case .swiftUI:
+                if #available(iOS 16, *) {
+                    vc = SwiftUIExampleViewController()
+                } else {
+                    vc = nil
+                    showLayoutNotAvailable("iOS 16")
                 }
             }
             
